@@ -1,0 +1,9 @@
+       body {
+            background-color: black;
+            color: white;
+        }
+        span {
+            color: red;
+            font-size: 30pt;
+            font: bold;
+        }
