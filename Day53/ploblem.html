@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>p.154문제</title>
+    <style>
+        /*
+        Lorem, Ipsum을 선택하는 3가지 방법
+        1. 클래스 선택자
+        2. 자손 선택자
+        3. 자식 선택자
+        */
+        /* .head-item{
+            color:royalblue;
+        } */
+        /* table td{
+            color:seagreen;
+        } */
+        /* .head > td{
+            color:springgreen;
+        } */
+        /* tr:first-of-type>td{
+            color:orange;
+        } */
+        .head>td:nth-child(1), .head>td:nth-child(2){
+            color: orchid;
+        }
+        header > * > h1{
+            background-color: orchid;
+        }
+        header > * > *:first-child > a{
+            background-color: palegreen;
+        }
+        header a:first-child{
+            background-color: peru;
+        }
+    /*nth-of-type도 사용 가능*/
+    </style>
+</head>
+<body>
+    <table>
+        <tr class="head">
+            <td class="head-item">Lorem</td>
+            <td class="head-item">Ipsum</td>
+        </tr>
+        <tr>
+            <td></td>
+            <td></td>
+        </tr>
+    </table>
+    <header>
+        <hgroup>
+            <h1><a href="#">Header</a></h1>
+        </hgroup>
+        <nav>
+            <div><a href="#">Item</a></div>
+            <div><a href="#">Item</a></div>
+            <div><a href="#">Item</a></div>
+        </nav>
+    </header>
+</body>
+</html>

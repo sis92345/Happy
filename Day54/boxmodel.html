@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>박스 속성의 개념</title>
+    <style>
+        *{
+            margin-top: 10px;
+            margin-left: 20px;
+        }
+        #b{
+            /*박스 속성에서 위치를 지정하지 않으면 좌우위아래 전부 적용*/
+            padding: 10px;
+            width: 500px;
+            height: 80px;
+            border-width: 5px;
+            /* border-style: dashed; */
+            /*
+            박스 속성에서 위치 지정할 수 있다.
+            위 -> 우 -> 하 -> 좌
+            */
+            border-color: pink royalblue olive;
+            border-left-color: chartreuse ;
+            
+            border-style: dashed dotted solid;
+            border-left-style:double;
+            border-radius: 100px;
+        }
+        #a{
+            width: 500px;
+            height: 80px;
+            border-left: hotpink solid 5px;
+            border-top-left-radius: 20px;
+            border-bottom-left-radius: 50px;
+            border-right: transparent; /*transparent: 배경색, 이미지를 그대로 적용*/
+        }
+    </style>
+</head>
+<body>
+    <h1>Box Model</h1>
+    <div id="b">
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+        Illo, culpa totam! Cumque temporibus nisi ea et vel ab blanditiis. 
+        Illum ut tempore suscipit ratione odit quae sunt non architecto 
+        eveniet.
+    </div>
+    <div id="a">
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+        Illo, culpa totam! Cumque temporibus nisi ea et vel ab blanditiis. 
+        Illum ut tempore suscipit ratione odit quae sunt non architecto 
+        eveniet.
+    </div>
+</body>
+</html>

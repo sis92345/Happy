@@ -1,0 +1,103 @@
+body {
+    background: #aaa;
+    font-family: serif;
+    color:#000;
+    margin:20px auto;
+    text-align: center;
+    line-height: 1.5em;
+    width:960px;
+}
+address{
+    display:inline;
+}
+header, nav, section, footer{
+    display:block;
+    border-radius: 8px;
+    box-shadow: 0px 0px 4px #666;
+    border : 1px solid #d3d3d3;
+    background-color: #fff;
+    margin:5px;
+    padding:0 20px 10px 20px;
+    font-size:12pt;
+    color:#000;
+    text-align:left;
+}
+header{
+    text-align:center;
+    padding:30px;
+    background-color: #444;
+    border : none;
+    color:#fff;
+    text-shadow: 0px 0px 4px #000;
+}
+header h1{
+    font-size:2.3em;
+    text-transform: none;
+    letter-spacing: 0em;
+}
+header h2{
+    margin:-10px 0px 20px;
+    font-size: 1.3em;
+}
+header ul{
+    padding:0px;
+    list-style-type: none;
+    display: inline;
+}
+header li{
+    margin:0px 10px;
+    padding:0px;
+    list-style-type:none;
+    display: inline;
+}
+nav {
+    float:right;
+    width:200px;
+}
+nav h1{
+    font-size:1.4em;
+}
+/* section tag style 추가하기 */
+section{
+    float:right;
+    width:656px;
+    text-align:left;
+    margin-bottom:10px;
+}
+section h1, nav h1{
+    border-radius: 4px;
+    background-color: #444;
+    color:#fff;
+    padding:10px;
+    margin:10px -10px;
+    text-shadow: 1px 1px 5px #000;
+}
+section ul{
+    padding:0px;
+    list-style: none;
+    border-top:1px solid #e7e7d7;
+    margin:14px 0px;
+}
+section li{
+    margin:0px;
+    padding:0px;
+    list-style: none;
+}
+section p{
+    font-size:0.9em;
+}
+article{
+    margin:0 0 30px 0;
+}
+footer{
+    clear : both !important; /*important는 여러 속성 중 가장 앞서실행*/
+    padding:10px;
+    background-color: #444;
+    border:none;
+    color:#fff;
+    font-size:0.8em;
+    text-align: center;
+}
+footer a{
+    margin:0px 5px;
+}

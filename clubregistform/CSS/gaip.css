@@ -1,0 +1,47 @@
+*{
+    background-color:lemonchiffon;
+    font-family: 굴림체;
+
+}
+
+table{
+    border: 1px solid #ADD8E6;
+    margin-right:  auto;
+    margin-left: auto;
+    width: 500px;
+}
+th{
+    background-color: #FFDEAD;
+    border: 1px solid #ADD8E6;
+    width: 6em;
+    padding: 5px;
+}
+td{
+    background-color:#d1fcf8;
+    border: 1px solid #ADD8E6;
+    padding: 5px;
+}
+#carisma{
+    font-size: 2em;
+    font-weight: bold;
+    color: orange;
+}
+#title{
+    text-align: center;
+}
+#major{
+    width: 110px;
+}
+table select{
+    background-color: white;
+}
+tr>.name>input[type="text"]{
+    background-color: white;
+}  
+.tx{
+    background-color: white;
+}
+
+input[type="submit"], input[type="reset"]{
+    background-color:whitesmoke;
+}

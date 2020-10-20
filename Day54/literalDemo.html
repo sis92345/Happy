@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Java Script: Literal</title>
+</head>
+<body>
+    Name : <input type="text" name="" id=""><br>
+    Age : <input type="number" name="" id="" min="0"><br>
+    <button onclick="showinfo()">Submit</button>
+    <script>
+        //웹문서(document)에서 input 태그 이름을 찾아서 배열에 넣는다.
+        //자바 스크립트는 데이터 형식이 없으므로 []안써도 된다.
+        //input이 2개이므로... 배열로 들어온다.
+        function showinfo(){
+            var array = document.getElementsByTagName('input');
+            //alert(array.length);
+            console.log(array.length)
+             //array[0].value: 0번째 배열의 값을 불러온다.
+            var username = array[0].value;
+            var userage = array[1].value;
+            alert(username + '님의 나이는 ' + userage + '살이군요.')
+        }
+    </script>
+</body>
+</html>

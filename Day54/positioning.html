@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Position Property 연습</title>
+    <style>
+        div{
+            position: absolute;
+        }
+        #a{
+            background-color: teal;
+            width: 200px;
+            height: 200px;
+            left: 108px;
+            top: 70px;
+            z-index: 2;
+        }
+        #b{
+            background-color: turquoise;
+            width: 200px;
+            height: 200px;
+            left: 128px;
+            top: 90px;
+            z-index: 3;
+        }
+        #c{
+            background-color: royalblue;
+            width: 200px;
+            height: 200px;
+            left: 148px;
+            top: 110px;
+            z-index: 4;
+        }
+        #d{
+            background-color: rgba(200, 30, 40, 0.3);
+            width: 300px;
+            height: 2000px;
+            z-index: 1;/*z-index: 어떤 태그가 위로 올라갈 것인가를 결정: 정수 숫자로 결정, 숫자가 작으면 제일 아래*/
+        }
+    </style>
+</head>
+<body>
+    <div id="a"></div>
+    <div id="b"></div>
+    <div id="c"></div>
+    <div id="d"></div>
+</body>
+</html>

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>onlychild, only-of-type 선택자 연습</title>
+    <style>
+        div > p:only-child{/*부모 태그의 자식이 오직 하나일때 적용*/
+            background-color: skyblue;
+        }
+        /* div>p:only-of-type{/*p가 유일한 자식일때: 다른 형제가 있어도 됨
+            background-color:tomato;
+        } */
+    </style>
+</head>
+<body>
+    <div>
+        <p>JavaScript</p>
+    </div>
+    <div>
+        <p>HTML5</p>
+        <h2>CSS3</h2>
+    </div>
+</body>
+</html>

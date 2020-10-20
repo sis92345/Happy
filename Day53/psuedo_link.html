@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Psuedo selector 연습</title>
+    <style>
+        a:link{/*링크*/
+            color:cornflowerblue
+        }
+        a:visited{/*방문하고 왔을때링크*/
+            color:crimson
+        }
+        a:active{/*링크를 클릭했을시*/
+            color: darkgreen;
+        }
+        a:focus{/*최근에 누른 링크*/
+            color:gray;
+        }
+        a:hover{/*마우스를 올려놓을때*/
+            color:floralwhite;
+        }
+    </style>
+</head>
+<body>
+    <h1>Psuedo selector: link</h1>
+    <p>
+        가상 선택자(Psuedo selector)의 첫번째 유형: link
+        `::`을 사용한다.
+    </p>
+    <hr>
+    <ul> <!--#은 링크 안걸림-->
+        <li><a href="https://www.naver.com" target="_blank">이용안내</a></li>
+        <li><a href="https://daum.net" target="_blank">객실소개</a></li>
+        <li><a href="https://www.google.com" target="_blank">예약 방법 및 요금</a></li>
+        <li><a href="https://www.nate.com" target="_blank">예약하기</a></li>
+    </ul>
+
+</body>
+</html>

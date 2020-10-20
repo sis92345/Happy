@@ -1,0 +1,57 @@
+body {
+    background: #aaa;
+    font-family: serif;
+    color:#000;
+    margin:20px auto;
+    text-align: center;
+    line-height: 1.5em;
+    width:960px;
+}
+header, nav, section, footer{
+    display:block;
+    border-radius: 8px;
+    box-shadow: 0px 0px 4px #666;
+    border : 1px solid #d3d3d3;
+    background-color: #fff;
+    margin:5px;
+    padding:0 20px 10px 20px;
+    font-size:12pt;
+    color:#000;
+    text-align:left;
+}
+header{
+    text-align:center;
+    padding:30px;
+    background-color: #444;
+    border : none;
+    color:#fff;
+    text-shadow: 0px 0px 4px #000;
+}
+header h1{
+    font-size:2.3em;
+    text-transform: none;
+    letter-spacing: 0em;
+}
+header h2{
+    margin:-10px 0px 20px;
+    font-size: 1.3em;
+}
+header ul{
+    padding:0px;
+    list-style-type: none;
+    display: inline;
+}
+header li{
+    margin:0px 10px;
+    padding:0px;
+    list-style-type:none;
+    display: inline;
+}
+/* nav tag css style 추가하기 */
+nav{
+    float:right;
+    width:200px;
+}
+nav h1{
+    font-size:1.4em;
+}

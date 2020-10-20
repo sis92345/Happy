@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS Style 4가지</title>
+    <style>
+        @import url(./css/style1.css);
+        p {
+            color:midnightblue;/*embedded style*/
+            font-weight: bold;/*embedded style은 ;로 문장 종결*/
+        }
+        
+    </style>
+     <!--
+        css를 다른 파일로 분리
+    -->
+    <link rel="stylesheet" href="./css/sytle.css">
+</head>
+<body >
+    <!--
+        css의 값 부여는 :를 사용한다.
+        inline style: 태그안에 CSS를 사용
+        > 태그와 분리하지 않는 비표준방법, 근본적으로 수정해야 하는 방법
+    -->
+    <h1 style="color:aqua">CSS를 적용하는 Style 4가지 </h1>
+    <!--
+        embedded style: <head>에 <sytle>사용
+        <style>의 안은 css문법이 적용
+    -->
+    <p>CSS를 적용하는 Style 4가지</p>
+    <!--
+        external style: css를 다른 파일로 분리: link 태그로 가져온다.
+        div는 block이므로 한 줄 전체를 차지
+        권장 방법
+    -->
+    <div>CSS를 적용하는 Style 4가지</div>
+    <!--
+        inported style: @import를 이용
+    -->
+</body>
+</html>

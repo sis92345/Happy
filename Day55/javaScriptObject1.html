@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>자바스크립트 객체 생성: new 사용</title>
+</head>
+<body>
+    <script>
+        // var Student = function(){
+
+        // };
+        //생성자: new 이용
+        // :이 아니라 ;를 사용한다는 점을 유의
+        function Student(hakbun, name, kor, eng, mat){
+            //private 속성 이용: var, public 속성 이용: this.
+            this.hakbun = hakbun;
+            this.name = name;
+            this.kor = kor;
+            this.eng = eng;
+            this.mat = mat;
+            var tot = this.kor + this.eng + this.mat;
+            //public method
+            this.toString = function(){
+                document.write('학번(' + this.hakbun + '), 이름(' + this.name + '), 국어(' + this.kor + '), 영어(' + this.eng + '), 수학(' + this.mat + '), 총점(' + this.getTot(this.tot) + ')' );
+                document.write('<br>');
+            }
+        }
+        var chulsu = new Student('2020-02', '김철수', 100, 80, 90);
+        var younghee = new Student('2020-03', '김영희', 50, 57, 90);
+        chulsu.toString();
+        console.log(chulsu.name);
+        console.log(younghee.name);
+        console.log(younghee.mat); //private이므로 접근 불가
+    </script>
+</body>
+</html>

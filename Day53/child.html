@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>자식 자손 선택자 연습</title>
+    <style>
+        /*
+        자식 선택자: 태그>태그
+        자식과 자손은 다르다: #container 바로 밑에 있는 ul은 CSS를 적용할 수 있으나
+        #container안에 있는 <p>안에 있는 ul은 적용되지 않는다.
+        모든 ul에 일괄적으로 적용하려면 자손선택자를 사용하거나
+        전체 선택자, 태그 선택자 등을 선택한다.
+        */
+        #container>ul{
+            border-width: 2px;
+            border-style:solid;
+            border-color: hotpink;           
+        }
+        /* #container>ul>li>ol{ FM방법: 근데 어차피 #container안에 ol이 하나니까 자손 선택자 사용
+            border-width: 2px;
+            border-style:solid;
+            border-color: hotpink;        
+        } */
+        #container ol{
+            border-width: 2px;
+            border-style:dashed;
+            border-color:aquamarine; 
+        }
+        #container>header{
+            font-size: 20px;
+          color: blue;   
+        }
+        h1{
+           font-weight: bold;
+           font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+    </style>
+</head>
+<body>
+    <section id="container">
+        <h1>자식 자손 선택자 연습</h1>
+        <header><!--제목-->
+            <h1>예약 방법 및 요금</h1>
+        </header>
+        <!--본문-->
+        <p>쌍용콘도 예약안내
+            <ul>
+                <li>
+                    예약 방법
+                    <ul>
+                        <li>본사로 전화하기</li>
+                        <li>홈페이지에 게시글 올리기</li>
+                    </ul>
+                </li>
+                <li>
+                    요금
+                    <ol>
+                        <li>1인: 40.000원</li>
+                        <li>2인: 60.000원</li>
+                        <li>3인: 80.000원</li>
+                        <li>4인: 100.000원</li>
+                    </ol>
+                </li>
+            </ul>
+        </p>
+    </section>
+    <h1>전화번호: 010-1234-5678</h1>
+</body>
+</html>

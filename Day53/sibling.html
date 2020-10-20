@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>인접, 일반 형재 선택자 연습</title>
+    <style>
+        /*
+        인접 형제 선택자: +
+        첫번째 선택자 바로 다음에 있는 두번째 선택자만 적용
+        */
+        div + p {
+            color: blueviolet;
+        }
+         /*
+         일반 형제 선택자: ~
+         첫번째 선택자 바로 다음에 있는 두번째 선택자만 적용
+         */
+        div ~ p{
+            color:chocolate;
+        }
+    </style>
+</head>
+<body>
+    <div></div>
+    <p>First Paragragh</p>
+    <h1>HI!</h1>
+    <p>Second Paragragh</p>
+
+</body>
+</html>

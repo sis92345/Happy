@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>attribute selector practice</title>
+        <!-- <link rel="stylesheet" href="./css/sytle.css"> -->
+    <style>
+        /*Psuedo selector 연습: link*/
+        input[type="submit"]:hover,  button:hover{
+            font-size:30px;
+            font-weight: 900;
+        }
+        input[type="email"]:focus, input[type="password"]:focus{
+            background-color:hotpink;
+            color:lightgreen;
+            font-size: 50px;
+        }
+    </style>
+</head>
+<body>
+    <h1> 속성 선택자</h1>
+    <fieldset id="des">
+        <legend>속성 선택자</legend>
+        <p>속성 선택자는 속성에 CSS를 부여하는 선택자</p>
+        <p>아이디 선택자는 해당하는 아이디에 CSS부여, 아이디 속성 부여는 #</p>
+        <p>원하는 여러곳에 같은 CSS를 부여하려면 클래스 선택자를 사용하고 클래스 선택자는 .을 사용</p>
+    </fieldset>
+    <hr>
+    <h1>회원 가입</h1>
+    <form>
+        <fieldset id="first">
+            <legend>기본 정보</legend>
+            <li>
+                <label for="">아이디</label>
+                <input type="email" name="" id="" size="15">
+                @
+                <select>
+                    <option>naver.com</option>
+                    <option>daum.net</option>
+                    <option>gmail.com</option>
+                    <option>nate.com</option>
+                </select>
+            </li>
+            <li>
+                <label for="">비밀번호</label>
+                <input type="password" name="" id="">
+            </li>
+            <li>
+                <label for="">비밀번호 확인</label>
+                <input type="password" name="" id="">
+            </li>
+        </fieldset>
+        <fieldset id="second">
+            <legend>추가 정보</legend>
+            <li>
+                <label for="">전화번호</label>
+                <input type="tel" name="" id="">
+            </li>
+            <li>
+                <label for="">주소</label>
+                <input type="text" name="" id="" size="50">
+            </li>
+        </fieldset>
+        <ul>
+            <li>
+                <input type="submit" value="제출" class="butt">&nbsp;
+                <button type="reset">취소</button>
+            </li>
+        </ul>
+    </form>
+</body>
+</html>

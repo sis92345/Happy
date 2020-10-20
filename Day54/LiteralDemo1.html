@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Java Script: Literal1</title>
+</head>
+   <script>
+        if('1'===1.0){
+            document.write('같다.');
+        }else{
+            document.write('다르다');
+        }
+        //자바 스크립트 객체
+        var student = {
+            //개체안에 들어있는 속성
+            name: '김철수',
+            age: 24,
+            hp: '010-0088-0000',
+            adress: '서울시 강남구 역삼동',
+            //자바 스크립트의 메소드
+            toString: function(){
+                return 'Hello, World';
+            }
+        };
+        document.write('<h1>학생정보</h1>');//body에 출력
+        document.write('<ul>');
+        document.write('<li>이름 : ' + student.name + '</li>');
+        document.write('<li>나이 : ' + student.age + '</li>');
+        document.write('<li>전화 : ' + student.hp + '</li>');
+        document.write('<li>주소 : ' + student.adress + '</li>');
+        document.write('<li>메소드 : ' + student.toString() + '</li>');
+        document.write('</ul>');
+    </script>
+</html>

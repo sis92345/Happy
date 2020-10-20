@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript: for..in 루프문</title>
+</head>
+<body>
+    <script>
+        //일반 for문
+        var arrays = ['사과', ' 배', '딸기', '복숭아', '수박'];
+        document.write('<ul>');
+        for(var i=0;i<arrays.length;i++){
+            document.write('<li>' + arrays[i] + "</li>");
+        }
+        //for..in문
+        /*
+            멤버가 존재하는 동안 그 멤버(배열이라면 인덱스)를 출력한다.
+        */
+        for(var myvariable in arrays){
+            console.log(myvariable);
+        }
+        /*
+            멤버가 존재하는 동안 그 멤버(.객체라면 멤버이름)를 출력한다.
+        */
+        var car = {name: 'Sonata', maker: 'Hyendai', price: 30000000};
+        for(var myvariable in car){
+            console.log(myvariable + "-->" + car[myvariable]);
+        }
+        //활용
+        var str = new String('Hello');
+        for(myvariable in String){
+            console.log(myvariable);
+        }
+    </script>
+</body>
+</html>

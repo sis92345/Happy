@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>before after 연습</title>
+    <style>
+        div > p::before{
+            /*
+            before: content에 해당하는 값을 태그 앞에 넣어라
+            */
+            content: "안녕하세요 여러분 ";
+        }
+        div > p::after{
+            content: " 입니다!!!";
+        }
+    </style>
+</head>
+<body>
+    <h1>before after 연습</h1>
+    <hr>
+    <div>
+        <p>한지민</p>
+        <p>김지민</p>
+    </div>
+</body>
+</html>

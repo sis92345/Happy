@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>selector 연습</title>
+    <style>
+        a[href]{/*a 태그에서 href속성이 있으면...*/
+            background-color: seagreen;
+        }
+        a[href="ftp://ftp.naver.com"]{/*a 태그에서 href속성의 값이 ftp://ftp.naver.com라면*/
+            background-color:skyblue;
+        }
+        a[href^="http://www.d"]{/*a 태그에서 href속성의 값이 http://www.d로 시작한다면*/
+            background-color:steelblue;
+        }
+        a[href$="e.com"]{/*a 태그에서 href속성의 값이 e.com으로 끝난다면....*/
+            background-color:violet;
+        }
+        a[href*="fqw"]{/*a 태그에서 href속성의 값에 fqw이 포함되어 있다면...*/
+            background-color:violet;
+        }
+        a[href~="zum"]{/*a 태그에서 href속성의 값에 zum값이 공백으로 구별되어 포함되어 있다면.. 즉 단어별로 일치*/
+            background-color:aqua;
+        }
+        a[href|="com"]{/*a 태그에서 href속성의 값에 fqw이 포함되어 있다면...*/
+            background-color:brown;
+        }
+    </style>
+</head>
+<body>
+    <!--
+        속성 선택자: 해당하는 속성에 CSS 적용
+    -->
+    <h1>Selector 연습</h1>
+    <h1>검색엔진</h1>
+    <ul>
+        <li><a href="ftp://ftp.naver.com">네이버</a></li>
+        <li><a href="http://www.daum.net">다음 카카오</a></li>
+        <li><a href="https://www.google.com">구글</a></li>
+        <li><a href="asdasfqfqwdweafqwef">네이트</a></li>
+        <li><a href="https  zum    net">ZUM</a></li>
+        <li><a href="https://zum.com/?af=v3lite#!/home">줌</a></li>
+    </ul>
+    
+</body>
+</html>

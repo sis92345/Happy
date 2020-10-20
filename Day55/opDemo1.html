@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>opDemo: in</title>
+    <script>
+        var fruits = ['사과', '딸기', '복숭아', '포도'];
+        console.log('사과' in fruits);
+        delete fruits[0];
+        console.log(0 in fruits);//멤버는 날라갔지만
+        console.log(fruits.length);//공간은 4개 그대로
+        var car = {name: 'Sonata', maker: 'Hyendai', price: 30000000};
+        console.log('name' in car);
+        flag = delete car.maker;
+        console.log(flag);
+        console.log('maker' in car);
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

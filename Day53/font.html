@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>font property</title>
+    <style>
+        /*
+            폰트는 다운로드가 안된다
+            보통 구글 폰트 링크를 건다.
+        */
+        p:first-of-type{
+            font-family:Dancing Script, 'Times New Roman', Times, serif ;
+            font-size: 200pt;
+            font-style: italic;
+        }
+        p:last-of-type{
+            font-family: 'Black Han Sans', 돋음체,'맑은 고딕';
+            font-size: 200pt;
+            font-style:oblique;
+            /*
+            italic 이나 oblique나 거의 같음: 몇몇 폰트에서 차이
+            bold: body에서 적용하려면 <strong>를 사용
+            */
+        }
+    </style>
+    <link href="https://fonts.googleapis.com/css2?family=Black+Han+Sans&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Black+Han+Sans&family=Dancing+Script&display=swap" rel="stylesheet">
+</head>
+<body>
+    <p>Hello, LOL</p>
+    <p>안녕하세요ㅎㅎ</p>
+
+
+</body>
+</html>

@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>table tag 연습</title>
+</head>
+<body>
+    <h1>table 연습</h1>
+    <table border="1" width="500"height="300" 
+    bordercolor= "red" align ="center"
+    cellspacing="5" 
+    background="./image/cat.JPG"> <!--border는 표준으로 1이면 테이블의 선을 보여준다.-->
+       <!--width, height는 비표준, 표준으로 하려면 css로 처리-->
+        <tr bgcolor="yellow">
+            <th>Java</th><!--th: 헤더, 가운데 정렬 진하게-->
+            <td>Corejava</td>
+            <td>Enterprise Java</td>
+        </tr>
+        <tr bgcolor="Orange">
+            <th bgcolor="white">RDBMS</th>
+            <td align="center">Oracle</td>
+            <td>MySQL</td>
+        </tr>
+        <tr bgcolor="cyan">
+            <th>Script</th>
+            <td>HTML5</td>
+            <td background="./image/cat.JPG">CSS</td>
+        </tr>
+    </table>
+    <table border ="1" align="center" 
+    cellspacing ="10"
+    cellpadding ="10">
+    <!--
+        cellspacing: 셀간의 간격(셀과 테이블 사이의 여백)
+        cellpading: 셀과 내용 사이의 여백
+        %(전체 페이지의 %)쓰는게 좋음: 값 입력하면 수평 스크롤바 생김  
+    -->
+        <caption align="bottom">시간표</caption><!--테이블 캡션-->
+        <tbody bgcolor="yellow">
+        <tr>
+            <th width="20%">月</th>
+            <th width="16%">火</th>
+            <th width="16%">水</th>
+            <th width="16%">木</th>
+            <th width="16%">金</th>
+            <th width="16%">土</th>
+        </tr>
+        <tr>
+            <td>1교시</td>
+            <td>도덕</td>
+            <td>국어</td>
+            <td>수학</td>
+            <td>체육</td>
+            <td>기술</td>
+        </tr>
+        <tr>
+            <td>2교시</td>
+            <td>영어</td>
+            <td>국어</td>
+            <td>과학</td>
+            <td>미술</td>
+            <td>기술</td>
+        </tr>
+        </tbody>
+        <tfoot bgcolor="red">
+            <tr>
+                <td>총 과목 수</td>
+                <td colspan="4"></td>
+                <td>8</td>
+            </tr>
+        </tfoot>
+    </table>    
+</body>
+</html>

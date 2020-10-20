@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form</title>
+</head>
+<body>
+    <h1>Form Tag:Login</h1>
+    <form action="login.jsp" method="POST" enctype="multipart/form-data">
+        
+        
+        
+        <ui style="list-style-type:none;"><!--list-style-type:none 리스트 타입 넣지 마라-->
+            <li><label for="id">ID:</label> <input type="text" name="" id="id" required="required" ="아이디 입력해라"  autofocus="autofocus"></li>
+            <li><label for="pw">Password:</label> <input type="password" name="" id="pw" size="50" maxlength="10" readonly="readonly" value="dkssud"></li>
+            <li>
+                <label>휴대전화:</label>
+                <input type="tel">               
+            </li>
+            <li>
+                <label>이메일:</label>
+                <input type="email">               
+            </li>
+            <li>
+                <input type="submit" value="로그인">
+                <input type="reset" value="취소">
+            </li>
+            
+        </ui>
+    </form>
+</body>
+</html>

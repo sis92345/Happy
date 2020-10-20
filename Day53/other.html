@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>기타 선택자</title>
+    <style>
+        input[type="email"]:invalid{
+            background-color: red;
+            color: white;
+        }
+        input[type="email"]:valid{
+            background-color: white;
+            color: black;
+        }
+        input[type="number"]:out-of-range{
+            background-color: red;
+            color: seashell;
+        }
+    </style>
+</head>
+<body>
+    <form>
+        e-mail: <input type="email" name="" id=""><br>
+        age: <input type="number" name="" id="" min="20" max="60"><br>
+        <input type="submit" value="제출">
+    </form>
+</body>
+</html>

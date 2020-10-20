@@ -1,0 +1,50 @@
+* {
+  /*all 선택자*/
+  margin: 0;
+  padding: 0%;
+}
+ul {
+  /*태그선택자*/
+  list-style-type: none;
+}
+h1 {
+  color: aquamarine;
+}
+/*아이디 선택자*/
+#first {
+  background-color: teal;
+}
+#second {
+  background-color: lightskyblue;
+}
+#des {
+  background-color: deepskyblue;
+}
+/*후손선택자*/
+fieldset legend {
+  background-color: lime;
+}
+/*클래스 선택자*/
+.butt {
+  background-color: magenta;
+}
+/*속성 선택자*/
+button[type="reset"] {
+  background-color: orchid;
+}
+input[type="tel"] {
+  font-size: 20px;
+  background-color: deeppink;
+}
+input[type*="tex"] {
+  font-size: 20px;
+  background-color: forestgreen;
+}
+input[type^="em"] {
+  font-size: 20px;
+  background-color: gold;
+}
+input[type$="rd"] {
+  font-size: 20px;
+  background-color: grey;
+}

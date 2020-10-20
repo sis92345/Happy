@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>상태 연습자 연습</title>
+    <style>
+         input[type="text"]{
+           width: 260px;    
+        }
+        input[type="text"]:disabled{
+            background-color:lightslategray;
+            border: 1px dotted red;
+            font: 20px white;       
+        }
+        input[type="text"]:enabled{
+            background-color:white;
+            border: 1px dotted black;
+            font: 20px white;
+        }
+        input[type="radio"]:checked +span{/*인접형제선택자*/
+            color:mediumaquamarine;
+            font: bold;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <form>
+        <!--
+            readonly: 읽기 전용
+            disabled: 아예 양식클릭 자체를 못함
+        -->
+        Name: <input type="text" name="" id="username" value="당신의 이름을 입력하세요" disabled>
+        <br><!--이벤트는 자바스크립트로 처리-->
+            <button type="button" onclick="document.getElementById('username').disabled=false">활성화</button>
+            <button type="button" onclick="document.getElementById('username').disabled=true">비활성화</button>
+        <br>
+        e-mail: <input type="text" name="" id="userpw" value="당신의 이메일을 입력하세요" enabled>
+        <br>
+        성별 : <input type="radio" name="gender" id="" checked><span>남성</span> &nbsp;<input type="radio" name="gender" id=""> <span>여성</span>
+    </form>
+</body>
+</html>

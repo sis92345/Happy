@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>성적관리 프로그램</title>
+    <style>
+        input[type]:focus{/*type속성이 있는input태그를 클릭할 때*/
+            background-color: seagreen;
+            color:snow;
+            margin-left: 40px;
+            transform: scale(1.5 ,1.5);
+        }
+        ul{
+            list-style-type: none;
+        }
+    </style>
+    <script>
+        function calculate(){
+            var m = document.myform;
+            var hakbun = document.myform.hakbun.value;
+            var name = document.myform.name.value;
+            //textbox에 들어오는 값은 글자이다.
+            //number는 textbox에 글자가 입력되는 것을 막는 역할
+            var kor = parseInt(m.kor.value);
+            var eng = parseInt(m.eng.value);
+            var mat = parseInt(m.mat.value);
+            var tot = kor + eng + mat;
+            var avg = tot/3;
+            var grade = (avg >=90) ? 'A':
+                                (avg >=80) ? 'B':
+                                    (avg >=70) ? 'C':
+                                        (avg >=60) ? 'D':'F';
+            var str = name + '(' + hakbun + ') <br />';
+            str += '국어(' + kor + '),' + '영어(' + eng + '),' + '수학(' + mat + '), <br />';
+            str += '총점(' + tot + '),' + '평균(' + avg + '),' + '평점(' + grade + '), <br />';
+            // document.getElementById('result');: 원래 방법
+            //버전업 한 거에서 사용: document.querySelector()
+            document.querySelector('#result').innerHTML = str;
+        }
+    </script>
+</head>
+<body>
+    <h1>성적관리 프로그램</h1>
+    <form action="" name="myform">
+        <ul>
+            <li>학번 : <input type="text" name="hakbun" id=""></li>
+            <li>이름 : <input type="text" name="name" id=""></li>
+            <li>국어 : <input type="number" name="kor" id="" min='0' max='100'></li>
+            <li>영어 : <input type="number" name="eng" id="" min='0' max='100'></li>
+            <li>수학 : <input type="number" name="mat" id="" min='0' max='100'></li>
+            <li><button type="button" onclick="calculate()">계산하기</button>&nbsp;<button type="reset">취소하기</button></li>
+        </ul>
+        <hr>
+        <div id ="result"></div>
+    </form>
+</body>
+</html>

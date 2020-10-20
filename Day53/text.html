@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>text 설정</title>
+</head>
+<style>
+    h1{
+        direction:rtl;/*텍스트 시작 방향*/
+        /* text-align: center; 텍스트 정렬: 표준*/
+        letter-spacing: 3em; /*자간*/
+        text-decoration: overline line-through underline;
+        text-shadow: 3px 1px red;
+    }
+    table{
+        border: 1px solid black;
+        /*
+        text-align:center -->테이블은 text-align이 안먹힌다.
+        table을 정렬시키는 방법
+       text-decoration: 
+       overline:윗선
+       line-through: 취소선
+       underline: 밑줄
+        */
+        margin-left: auto;
+        margin-right: auto;
+    }
+    th, td{
+        border: 1px solid black;
+        font-family: Verdana, Geneva, Tahoma, sans-serif;
+        /*첫번째 폰트가 없으면 다음 폰트를 사용한다: 따라서 공백이 있는 폰트 이름은 ""로 묶는다.*/
+    }
+    a{
+        /*앵커 테그에서 링크 밑줄을 숨기고 싶을때 text-decoration를 활용*/
+        text-decoration: none;
+        cursor: help;
+    }
+</style>
+<body>
+    <h1>HeadLine</h1>
+    <h2><ins>HeadLine2</ins></h2>
+    <h2><a href="https://www.naver.com">naver.com</a></h2>
+    <table >
+        <tr>
+            <td>Hello, I'm Table</td>
+            <td>Hello, I'm Table too</td>
+            <td>Hello, I'm Table too</td>
+        </tr>
+        <tr>
+            <td>Hello, I'm Table</td>
+            <td>Hello, I'm Table too</td>
+            <td>Hello, I'm Table too</td>
+        </tr>
+    </table>
+</body>
+</html>

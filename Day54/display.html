@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>display property</title>
+    <style>
+        h1{
+            background-color: turquoise;
+        }
+        p > span:first-of-type{/*span: inline element*/
+            background-color: thistle;
+            display: block;
+        }
+        ul>li{
+            display: inline;
+        }
+    </style>
+</head>
+<body>
+    <h1>Hello, World!</h1>
+    <p>
+        <span>JavaScript</span>
+        <span>EcmaScript</span>
+    </p>
+    <h1>검색엔진</h1>
+    <ul>
+        <li><a href="https://www.naver.com" target="_blank">네이버</a></li>
+        <li><a href="https://www.google.com" target="_blank">구글</a></li>
+        <li><a href="https://www.daum.net" target="_blank">다음</a></li>
+        <li><a href="https://www.nate.com" target="_blank">네이트</a></li>
+    </ul>
+</body>
+</html>

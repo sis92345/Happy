@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Select</title>
+</head>
+<body>
+    <ul>
+        <li>
+            <select name="gender" id="">
+                <option value="">--선택--</option>
+                <option value="male" selected>남성</option>
+                <option value="female">여성</option>
+            </select>
+        </li>
+        <li>
+            <select name="hobby" id="" multiple="multiple" size="10">
+                <option value="">--선택--</option>
+                <option value="game" selected>게임</option>
+                <option value="mountain">등산</option>
+                <option value="running">러닝</option>
+            </select>
+        </li>
+        <li>
+            <select name="driging" id=""  size="10">
+                <option value="">--선택--</option>
+                <optgroup label="온 음료">
+                    <option value="game">커피</option>
+                    <option value="mountain">녹차</option>
+                    <option value="running">둥글레차</option>
+                </optgroup>
+                <optgroup label="냉 음료">
+                    <option value="game">아이스 커피</option>
+                    <option value="mountain">아이스 녹차</option>
+                    <option value="running">아이스티</option>
+                </optgroup>
+                
+            </select>
+        </li>
+        <li>
+            <label>내가 좋아하는 스포츠</label>
+            <!--datalist는 공부-->
+        </li>
+        <li>
+            <datalist id="sport">
+                <option value="배구"></option>
+                <option value="농구"></option>
+                <option value="축구"></option>
+                <option value="야구"></option>
+            </datalist>
+        </li>
+    </ul>
+</body>
+</html>

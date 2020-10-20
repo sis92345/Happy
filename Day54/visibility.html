@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Visibility 연습</title>
+    <style>
+        *{
+            font-size: 1.5em;
+        }
+        p{
+            visibility: hidden; /*내용은 사라지지만 공간 자체는 남는다.*/
+        }
+        h1{
+            display:none;/*내용과공간 자체가 사라진다.*/
+        }
+        #a{
+            visibility: hidden;
+        }
+    </style>
+</head>
+<body>
+    <h1>Hello</h1>
+    <p>World</p>
+    <div>
+        <span>윗 줄은 3줄</span>
+        <span id="a">World</span>
+        <span id="b">CSS3</span>
+    </div>
+</body>
+</html>

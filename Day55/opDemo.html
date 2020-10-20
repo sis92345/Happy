@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>opDemo: void delete</title>
+    <script>
+        var fruits = ['사과', '딸기', '복숭아', '포도'];
+        console.log(fruits.length);     //4
+        console.log(fruits[0]);          //사과
+        delete fruits[0];
+        console.log(fruits.length);    //4
+        console.log(fruits[0]);         //undefined
+        //fruit[0]이 delete가 되어서 값이 날아갔다. 따라서 undefined로 출력
+        //즉 공간은 남아있고 값이 delete
+
+        var car = {name: 'Sonata', maker: 'Hyendai', price: 30000000};
+        console.log(car.maker);//Hyundai
+        delete car['maker'];
+        console.log(car.maker);//undefined
+
+        var myworld = 'Hello, World';
+        console.log(myworld);
+        delete myworld;
+        console.log(myworld);
+
+        num = 100;
+        console.log(num);
+        flag = delete num;
+        console.log(flag); //true를 삭제
+    </script>
+</head>
+<body>
+    <h1>검색엔진</h1>
+    <ul>
+        <li><a href="#">Naver</a></li><!--링크가 안걸리게 하는법1: #-->
+        <li><a href="javascript:void(0)">Google</a></li><!--링크가 안걸리게 하는법2: javascript:void(0)-->
+        <!--
+            #은 url에 #이 생기는데 void는 깔끔
+        -->
+    </ul>
+</body>
+</html>

@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>자바 스크립트: 지역변수와 전역변수</title>
+</head>
+<body>
+    <script>
+        var a = 10; //전역변수: 
+        function sample(){
+            var a = 100; //지역변수
+            console.log('a = ' + a);//100출력
+        }
+        sample(); //100출력
+        console.log('a = ' + a); //10출력
+        
+    </script>
+</body>
+</html>
