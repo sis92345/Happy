@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM Level 0 Event</title>
+    <script>
+        function change(){
+            document.body.style.backgroundColor = 'Cyan';
+            console.log(this);
+        }
+        /*Inline Model을 Traditional Model*/
+        window.onload = setup; //onLoad는 Loading 후
+        function setup(){
+            //Event Sources
+            var buttons = document.getElementsByTagName('button');
+            //Event Source Target
+            //Event target에 event type과 연결하고, event handler로 등록하기
+            buttons[0].onclick = change;
+            console.log(this);
+        }
+    </script>
+</head>
+<body>
+    <!--Inline: on~~~, Level1-->
+    <!--<button onclick="change()">Click Me!!!</button>--><!--DOM Level 0의 inline Model-->
+    <button>Click Me!!!!!</button>
+    
+</body>
+</html>

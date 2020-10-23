@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>중첩 함수 연습</title>
+</head>
+<body>
+    <script>
+        function outer(who){
+            //return 24;
+            //return 'hello';
+            //return turn;
+            //return ['사과', '배', '딸기']; //배열은 object
+            //return {name: 'Sonata', price: 30000000};
+            function inner(greeting){ //함수가 반환된다.
+                document.write(who + '님!' + greeting)
+            }
+            return inner;
+        }
+        //var myvar = outer('jimin');
+        //document.write(typeof(myvar));
+        //document.write(myvar.price);
+        //outer()를 받은 myvar는 함수
+        var myvar = outer('jimin'); //myvar는 callback으로 inner함수의 주소를 가지고 있다.
+        myvar('goobmorning');
+        var afternoon = myvar;
+        afternoon('afternoon');
+        //근데 outer함수 날라가면 지민 파라미터도 날아간거 아님?
+        //이게 바로 클로저
+        /*
+        중첩함수의 특징
+        1. 안쪽 함수(inner)는 바깥 함수의 바깥쪽에서 접근 불가
+        2. 바깥 함수(outer)는 안쪽 함수의 변수에 접근 불가 
+        3. 안쪽 함수는 바깥 함수의 변수에 접근할 수 있다.
+        4. 안쪽함수는 바깥함수가 끝나더라도 계속 메모리에 남아있다.★
+        -즉 클로저는 중첩함수여야 가능
+
+        */
+    </script>
+</body>
+</html>

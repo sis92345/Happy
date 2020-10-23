@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>location object 연습</title>
+</head>
+<body>
+    <script>
+        //document.write('search = ' + decodeURI(location.search));
+        //URL은 한글이 안되서 다르게 나온다.
+        //decodeURI필요
+        var search = decodeURI(location.search);
+        search = search.substring(1);// ?가빠진다.
+        var array = search.split('&'); //username과 userage로 분리 --> 배열로 만듦
+        var username = array[0].split('=')[1]; //한지민
+        var userage = array[1].split('=')[1];//24
+        document.write('이름 = ' + username + '<br>');
+        document.write('나이 = ' + userage);
+    </script>
+</body>
+</html>

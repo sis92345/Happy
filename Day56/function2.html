@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>익명 함수 기본</title>
+    <script>
+        // window.onLoad = setup;//윈도우 브라우저가 로딩할때 setup 함수의 주소를 받는다.
+        // function setup(){
+
+        // }
+        //위에꺼는 다음과 같다.
+        window.onload =function(){
+            document.querySelector('#btnChange').onclick = clickMe; //callback 함수, clickMe는 함수의 주소
+            //★쉽게말해 콜백함수는 콜백 포인터다
+        }
+        function clickMe(){
+            //javaScript의 backgroundColor, CSS와 차이점 구분
+            document.body.style.backgroundColor = 'yellow';
+        }
+               
+    </script>
+</head>
+<body>
+     <button id="btnChange" type="button">change</button>
+    <script>
+        //일반 함수: 
+        // function calc(kor, eng, mat){ //선언적 함수, Static 함수
+        //     return kor + eng + mat;
+        // }
+        // document.write(calc(100,89,79) + '<br>')
+        //익명함수: 함수의 포인터를 변수로 넘긴다.
+        var calc = function(kor, eng, mat){ //익명함수, 함수 Literal
+            return kor + eng + mat;
+        }
+        //익명함수 장점
+        var a = calc; //함수 복사 가능
+        function myfunction(b){ //파라미터로 함수를 넘기는 것을 Callback함수라고 한다.
+            //콜백함수설명: https://hees-dev.tistory.com/33
+            document.write(b(55, 66, 77));
+        }
+        myfunction(a)
+    </script>
+</body>
+</html>

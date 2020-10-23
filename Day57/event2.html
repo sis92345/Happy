@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Event Bubbling: 이벤트의 전파 방향</title>
+    <style>
+        body{
+            background-color: brown;
+        }
+        div{
+            width: 200px;
+            height: 200px;
+            background-color: cadetblue;
+        }
+        button{
+            width: 100px;
+            height: 100px;
+            background-color: gold;
+        }
+    </style>
+    <script>
+        window.addEventListener('load', setup);
+        function setup(){
+            document.querySelector("#mybody").addEventListener('click', bodyClick, true)
+            document.querySelector("#mydiv").addEventListener('click', divClick, true)
+            document.querySelector("#mybtn").addEventListener('click', btnClick, true)
+            //기본 설정
+            //btn -> div -> body순으로 이벤트가 실행: bubble up
+            //addEventListener('click', btnClick, true)에서 세번째 파라미터의 false가 bubble up
+            //true: body -> div -> btn: Casecade Down
+            /*
+                이벤트의 전파 방향
+                1. Bubble Up: default, false, DOM Tree상 아래에서 위로 전파
+                - button --> div --> body
+                2. Cascade Down: true, DOM Tree상 위에서 아래로 전파
+                - body --> div --> button
+
+                이를 이용해서 시작된 이벤트를 중지시킬 수 있다: stopPropagation()
+                this: 이벤트를 
+            */            
+        }
+        function bodyClick(){
+            alert('Body가 눌렸어요');
+        }
+        
+        function divClick(){
+            alert('Div가 눌렸어요');
+        }
+        
+        function btnClick(){
+            alert('Btn이 눌렸어요');
+        }
+    </script>
+</head>
+<body id="mybody">
+    <div id="mydiv">
+        <button id="mybtn">Click Me!!!</button>
+        <!--
+            button을 누르는 것은 div와 body를 누르는 것
+            트리구조: body -> div -> button 
+        -->
+    </div>
+</body>
+</html>

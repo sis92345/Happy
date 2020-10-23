@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BOM: Location Object</title>
+    <script>
+        window.onload = function(){
+            document.forms[0].selSearchEngine.addEventListener('change', mychange, false); //changeEvent
+        }
+        function mychange(evt){
+            var url = this.options[this.selectedIndex].value; //내가 선택한 opition의 value 값, text선택하면 '네이버' 나옴
+            
+            //BOM: Location
+            //FM: window.location인데  window생략 가능
+            location.href = url;//주소 표시줄에 내가 선택한 option 태그의 value값을 넣는다.
+            //w(ﾟДﾟ)w
+            //위에꺼랑 같은 역할: 세부차이 확인
+            location.replace(url);
+
+            
+        }
+    </script>
+</head>
+<body>
+    <form >
+        검색엔진: <select name="selSearchEngine">
+                        <option value="">--선택--</option>
+                        <!--쿼리사용-->
+                        <option value="https://www.naver.com/index.html">네이버</option>
+                        <option value="https://www.google.com">구글</option>
+                        <option value="https://www.daum.net">다음카카오</option>
+                        <option value="https://www.nate.com">네이트</option>
+                    </select>
+    </form>
+</body>
+</html>

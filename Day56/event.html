@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Event의 개요</title>
+
+</head>
+<body>
+    <div>
+        <button type="button" onmouseover="change('aquamarine')" onmouseout="back()">RED</button>
+        <button type="button" onmouseover="change('lightslategrey')" onmouseout="back()">BLUE</button>
+        <!--
+            button: event source
+            onmouseover: event type
+            change(color): event handler
+        -->
+    </div>
+    <script>
+        function change(color){
+            document.body.style.backgroundColor = color;
+        }
+        function back(){
+            document.body.style.backgroundColor = wheat;
+        }
+    </script>
+</body>
+</html>

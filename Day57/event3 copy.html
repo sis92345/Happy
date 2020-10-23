@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>이벤트 방해 연습</title>
+    <script>
+       window.addEventListener('load',function(){
+                document.myform.addEventListener('submit', function(evt){
+                    if(!this.username.value){ //this는 이벤트를 발생시킨 객체, 즉 form
+                        //객체이 값이 없다면
+                        alert('이름의 값이 없습니다.');
+                        this.username.focus();
+                        //return false; DOM Level 0에서만 사용 가능
+                        evt.preventDefault();
+                    }
+                }, false);
+            }, false)
+        
+        function check(evt){ //ect: event 객체
+            //DOM Level 0  
+            // if(!document.myform.username.value){
+            //     //값이 없다면
+            //     alert('이름의 값이 없습니다.');
+            //     document.myform.username.focus();
+            //     //return false; //Event 전파 방해: Level 0
+            //     evt.stopPropagation();
+            // }else {
+            //     return true;
+            // }
+            // DOM Level 2
+            // window.addEventListener('load',function(){
+            //     document.myform.addEventListener('submit', function(evt){
+            //         if(!this.username.value){ //this는 이벤트를 발생시킨 객체, 즉 form
+            //             //객체이 값이 없다면
+            //             alert('이름의 값이 없습니다.');
+            //             this.username.focus();
+            //             //return false; DOM Level 0에서만 사용 가능
+            //             evt.preventDefault();
+            //         }
+            //     }, false);
+            // }, false)
+        }
+    </script>
+</head>
+<body>
+    <!-- <form action="text.jsp" method="get" name="myform" onsubmit="return check()"> onsubmit="check()"는 dom level 0 -->
+    <form action="text.jsp" method="get" name="myform" >
+        Name : <input type="text" name="username"><br>
+        <input type="submit" value="전송하기" name = "btnOk" onclick="check()">
+        <!--이름 넣고 전송 -> test.jsp: 이를 막는다.-->
+    </form>
+    
+</body>
+</html>

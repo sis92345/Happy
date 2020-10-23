@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>자바스크립트 함수 기본</title>
+</head>
+<body>
+    <script>
+        function change(myvar){
+            myvar *=100;
+            document.write('In Change \'s a =' + myvar + '<br>');
+            document.write('값호출은 결국 값복사: 공간이 2개 생길뿐 원본이 바뀌지는 않는다. <br>');
+        }
+        var  a = 5;
+        document.write('Before Change \'s a =' + a + '<br>' );
+        change(a);
+        document.write('after Change \'s a =' + a + '<br>' );
+        document.write('<hr>');
+        //call by reference
+        a = {age: 5}; //object
+        function change1(myvar){
+            myvar.age *=100;
+            document.write('In Change \'s a =' + myvar.age + '<br>');
+            document.write('주소로 호출하면 실제로 값이 바뀐다.<br>');
+        }
+        document.write('Before Change \'s a =' + a.age + '<br>' );
+        change1(a);
+        document.write('after Change \'s a =' + a.age + '<br>' );
+    </script>
+</body>
+</html>

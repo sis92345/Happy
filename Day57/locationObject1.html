@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form action="locationobject2.html" method='get'>
+        Name: <input type="text" name="username" id=""> <!--서버는 name을 받는다.-->
+        Age: <input type="number" name="userage" id="">
+        <input type="submit" value="전송">
+        <!--http://127.0.0.1:5500/locationobject2.html
+            여기부터 search?username=%ED%95%9C%EC%A7%80%EB%AF%BC&userage=25-->
+    </form>
+</body>
+</html>
+
+<!-- var search = location.search;
+console.log(search)
+evt.preventDefault(); -->

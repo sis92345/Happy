@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>String Object 연습</title>
+</head>
+<body>
+    <script>
+        // var start = 65;
+        // for(var i=0;i<26;i++){
+        //   document.write(String.fromCharCode(65+i));
+            
+        // }
+        var str = '(135-050) 서울시 강남구 역삼동 한독빌딩 8층';
+        //var zipcode = str.substring(1,8); start index에서 end index까지
+        //var zipcode = str.slice(1,8); //substring()과 동일
+        var zipcode = str.substr(1,7); //start index로부터 몇개
+        document.write('우편번호 = ' + zipcode);
+        </script>
+</body>
+</html>

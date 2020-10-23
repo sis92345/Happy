@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>자바스크립트 함수 기본</title>
+</head>
+<body>
+    <script>
+        function clacSum(){
+            var sum = 0;
+            for(var i = 0; i < 101; i++){
+                sum += i;
+            }
+            document.write('1부터 100까지의 합: ' + sum + '입니다.');
+        }
+        clacSum(); //call by name
+   
+        function clacSum(start, end){
+            var sum = 0;
+            for(var i = start; i <= end; i++){
+                sum += i;
+            }
+            return sum;
+        }
+        document.write('50부터 100까지의 합: ' + clacSum(50, 100) + '입니다.');//call by value
+    </script>
+</body>
+</html>

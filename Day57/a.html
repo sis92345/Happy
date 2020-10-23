@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        select{
+            width: 300px;
+            background-color:lightblue;
+        }
+    </style>
+    <script>
+        window.addEventListener('load', setup, false);
+        
+
+        function setup(){
+            document.querySelector('#btnAdd').addEventListener('click', cartAdd, false);
+            document.querySelector('#txtAdd').addEventListener('keydown', keyboardAdd, false);//keydown: 키보드를 누르면 이벤트 발생
+            document.querySelector('#cart').addEventListener('click', cartSelect, false); 
+            document.querySelector('#btnRemove').addEventListener('click', cartRemove, false);
+        }
+        function keyboardAdd(evt){
+            //console.log(evt.keyCode); //Event 객체의 keyCode는 키보드를 눌렀을때 어떤 아스키코드가 들어오는지 알 수 있다.
+            if(evt.keyCode == 13){
+                cartAdd();
+                //document.querySelector('#txtAdd').addEventListener('keydown', cartAdd, false);를 하면 왜 한번만 적용
+            }
+        }
+        function cartAdd(){
+            //https://www.w3schools.com/jsref/dom_obj_select.asp
+            //를 참고하면 select의 add()옵션으로 추가 가능
+            var product = document.querySelector('#txtAdd').value;
+            var myoption = document.createElement('option');//<option></option>을 만든다.
+            myoption.text = product; // <option>product</option>
+            document.querySelector('#cart').add(myoption);
+            document.querySelector('#txtAdd').value = ' ';
+        }
+        function cartSelect(){
+            //<option value="">textbox</option>에서 text박스와 value영역이 다름을 유의
+             //this는 이벤트가 발생한 객체, this.selectedIndex는 선택한 인덱스, .text는 value가 아닌 textbox에 있으므로...
+            //var product는 유저가 선택한 값
+            //선택한 상품의 이름이 텍스트박스에 찍힌다.
+            if(this.selectedIndex != 0){ // --카트--는 0번째 인덱스이고 이건 삭제되지 않아야 한다.
+                var product = this.options[this.selectedIndex].text
+                document.querySelector('#txtRemove').value = product;
+            //console.log(idx);
+        }
+        function cartRemove(){       
+                var cart = document.querySelector('#cart').remove();
+                if(cart.selectedIndex != 0){
+                cart.remove(cart.selectedIndex);
+                document.querySelector('#txtRemove').value = ' ';
+            }
+            
+        }
+    </script>
+</head>
+<body>
+    <div>
+        <div>담기 : <input type="text" id="txtAdd"> <input type="button" value="담기" id="btnAdd"></div> 
+        <div>
+            <select id="cart" size="10">
+                <option value="">--카트--</option>
+            </select>
+        </div>
+        <div>빼기 : <input type="text" id="txtRemove"> <input type="button" value="빼기" id="btnRemove"></div>
+    </div>
+</body>
+</html>

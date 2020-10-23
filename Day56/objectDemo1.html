@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>자바스크립트 객체 생성 방법2: 생성자 이용</title>
+    <script src="./scripts/student1.js"></script>
+</head>
+<body>
+    <script>
+        var chulsu = new Student('2020-01', '김철수',56,78,90);
+        var younghee = new Student('2020-02', '김영희',56,58,20);
+        var jimin = new Student('2020-03', '한지민',100,100,100);
+        //배열 사용 가능
+        var array = [chulsu ,younghee, jimin];
+        for(var i=0;i<array.length;i++){
+            array[i].calc();
+            array[i].toString();
+        }
+    </script>
+</body>
+</html>

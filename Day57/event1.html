@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM Level 2 Event</title>
+    <script>
+        //전통적모델과 비교 할 것
+        //load Event
+        window.addEventListener('load', setup); //(type, handler)
+        function setup(){
+            var buttons = document.getElementsByTagName('button')
+            buttons[0].addEventListener('click', change);
+        }
+        function change(evt){
+            document.body.style.backgroundColor = 'blue';
+            console.log(evt.target);
+            console.log(evt.target.tagName);
+            console.log(this.tagName);
+            console.log(evt.clientX);
+            console.log(evt.clientY);
+        }
+    </script>
+</head>
+<body>
+    <button>Click Me!!!</button>
+</body>
+</html>

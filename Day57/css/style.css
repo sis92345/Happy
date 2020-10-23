@@ -1,0 +1,65 @@
+@charset "utf-8";/*Character Set 설정*/
+ul{
+    list-style-type: none;
+}
+h1{
+    text-align: center;
+}
+li{
+    line-height: 1.5em;;
+}
+form{
+    text-align: center;
+    font-size: 1.5em;
+}
+input{
+    font-size: 1em;
+}
+input[type="text"]:focus,  input[type="number"]:focus{
+    background-color: darkgray;
+    transform: scale(1.5, 1.5);
+    margin-left: 3em;
+}
+table{
+    width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: 2em;
+    border: 1px solid steelblue;
+    border-collapse: collapse; /*테두리를 단선으로*/
+}
+table>tfoot>tr>th{
+    text-align: right;
+    background-color: cadetblue;
+}
+th{
+    border-radius: 1em;
+    background-color: steelblue;
+    color: wheat;
+    height: 40px;
+    width: 100px;
+}
+td{
+    border-radius: 1em;
+    text-align: center;
+    color: black;
+}
+tr:nth-of-type(2n){
+    border-radius: 1em;
+    text-align: center;
+    color: black;
+    background-color: lightgray;
+}
+th, td{
+    border: 1px solid seashell;
+    height: 40px;
+    width: 100px;
+}
+tr:hover{
+    font-size: 1.5em;
+    color: crimson;
+    font-weight: bold;
+    font-family: 맑은고딕;
+    height: 80px;
+    width: 180px;
+}

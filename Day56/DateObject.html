@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Date Object 연습</title>
+</head>
+<body>
+    <script>
+        //var now = new Date('2020년 10월 19일 오후 1시 30분 18초');
+        var now = new Date('19 October 2020');
+        var a = Date.parse('21 October 2020');
+        //프로그램 시작때 시간, 종료때 시간 관측 가능
+        document.write(a + '<br>');
+        document.write(new Date(a).toLocaleString());
+        
+        document.write(now.toString()) + '<br>';
+        document.write(now.toLocaleString() + '<br>');
+        document.write(now.toISOString() + '<br>');
+    </script>
+</body>
+</html>
