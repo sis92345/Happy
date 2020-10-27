@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>계산 퀴즈</title>
+    <link rel="stylesheet" href="./css/main.css">
+    <script src="./script/main.js"></script>
+</head>
+<body>
+    <table>
+        <tr>
+            <td>
+                <fieldset id="input">
+                    <!--기본 입력 창-->
+                    <legend>계산 퀴즈</legend>
+                    <p>이름과 계산의 답을 입력한 후 완료 단추를 눌러 주세요.</p>
+                    이름: &nbsp;&nbsp;&nbsp;<input type="text" id="userid" size="10">
+                    <table id="innertable">
+                        <tr >
+                            <th>1.</th>
+                            <td class="innertd"> 5 + 6 = </td>
+                            <td><input type="number" name="answer" id="answer1" size="5"></td>
+                        </tr>
+                        <tr>
+                            <th>2.</th>
+                            <td class="innertd"> 8 - 3 = </td>
+                            <td><input type="number" name="answer" id="" size="5"></td>
+                        </tr>
+                        <tr>
+                            <th>3.</th>
+                            <td class="innertd"> 7 X 6 = </td>
+                            <td><input type="number" name="answer" id="" size="5"></td>
+                        </tr>
+                        <tr>
+                            <th>4.</th>
+                            <td class="innertd"> 15 + 3 = </td>
+                            <td><input type="number" name="answer" id="" size="5"></td>
+                        </tr>
+                        <tr>
+                            <th>5.</th>
+                            <td class="innertd"> 8 + 6 - 3 X 2 ÷ 2 = </td>
+                            <td><input type="number" name="answer" id="" size="5"></td>
+                        </tr>
+                    </table>
+                    <div>
+                        <button id='btn'>완료</button>
+                    </div>       
+                </fieldset>
+            </td>
+            <td id='outputtd'>
+               <!--이벤트로 계산 결과창이 나올 곳-->
+               <!-- <fieldset id="output"> -->
+                <!--기본 입력 창-->
+                <!-- <legend>a</legend> -->
+               <!-- </fieldset> -->
+            </td>
+        </tr>
+    </table>
+   
+</body>
+</html>

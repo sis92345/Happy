@@ -1,0 +1,86 @@
+table{
+    margin-left: auto;
+    margin-right: auto;
+    
+}
+table h5{
+    text-align: left;
+}
+fieldset{
+  display: inline-block;
+  border: 1px solid burlywood;
+  padding: 1.5em;
+  width: 300px;
+  height: 300px;  
+}
+#input{
+  display: inline-block;
+  border: 1px solid burlywood;
+  padding: 1.5em;
+  width: 400px;
+  height: 300px;  
+  /* margin-top: 2em; */
+}
+/* #result{
+    display: inline-block;
+    border: 1px solid burlywood;
+    margin-top: 0.8em;
+    width: 400px;
+    height: 298px;
+} */
+p{
+    text-align: center;
+}
+td{
+    text-align: right;
+    margin-right: 0px;  
+}
+legend{
+    text-align: left;
+    font-size:1.5em;
+    font-weight: bold;
+}
+input[type="number"]{
+    width: 50px;
+}
+#innertable{
+    width: 400px;
+    border-spacing: 0em;
+    
+}
+#innertable td{
+    padding-right: 0em;
+    
+}
+#innertable th{
+    font-weight: bold;
+    color: grey;
+    text-align: left;
+    width: 30px;
+}
+#innertable .innertd{
+    /* border: 1px solid darkblue; */
+    text-align: left;
+    font-weight: bold;
+}
+/* #userid{
+    width: 30px;
+} */
+div{
+    margin-top: 0.1em;
+    text-align: center;
+}
+#output{
+  display: inline-block; 
+  border: 1px solid burlywood;
+  margin-top: 2.8em;
+  margin-bottom: 1.85em;
+  padding: 1.5em;
+  width: 400px;
+  height: 284px; 
+}
+#tot{
+    font-weight: bold;
+    font-size: 1.5em;
+    color: red;
+}

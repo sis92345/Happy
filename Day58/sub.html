@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>회원 정보 입력 및 수정 페이지</title>
+    <style>
+        ul{
+            list-style-type: none;
+        }
+    </style>
+    <script>
+        window.addEventListener('load', setup, false);
+        function setup(){
+            //Event setUp
+            //click 이벤트, myInput 호출, bubble up
+            document.myform.userage.addEventListener('change', agechange, false);
+            document.querySelector('#btnClose').addEventListener('click', myclose, false);
+            //function이름이 close면 호출이 안될 수 있다: 원래 close라는 함수가 있다.
+        }
+        function agechange(){
+            //이벤트 발생 객체는 this: 여기서 range
+            document.querySelector('#myrange').innerHTML = this.value;
+        }
+        function myclose(){
+            //close버튼을 누르면 정보를 main.html에 넘겨준다.
+            //창을 열게한 창을 opener라고 한다.
+            var f = document.myform;
+            var gender;
+            //보낸다.
+            opener.document.querySelector('#username').innerHTML = f.username.value;
+            opener.document.getElementsByName('userage')[0].innerHTML = f.userage.value;
+            //text박스이므로 태그사이인 innerHTML이 아니라 value
+            opener.document.querySelector('#regdate').value = f.regdate.value;
+            if(f.gender[0].checked){
+                //gender는 남성, 여성으로 2개
+                //즉 f.gender.value;는 배열로 넘어가고 남성이 먼저 있으니까
+                //gender[0]은 남성, gender[1]은 남성
+                //따라서 gender[0]이 선택되었다면....
+                gender = f.gender[0].value;
+            }else gender = f.gender[1].value;
+            opener.document.querySelector('#gender').value = gender;
+            
+            //main.html에서 <div>에서 받으므로 태그 사이에 들어간다. innerHTML
+            opener.document.querySelector('#city').innerHTML = f.city.value;
+            window.close()//창을 닫는다.
+        }
+    </script>
+</head>
+<body>
+    <!--회원 정보 입력 및 수정 페이지-->
+    <form name="myform">
+        <ul>
+            <li>Name : <input type="text" name="username"></li>
+            <li>Age : 
+                <input type="range" name="userage" min="20" max="60" value="20">
+                <span id="myrange"></span>
+            </li>
+            <li>Registration Date : <input type="date" name="regdate"></li>
+            <li>Gender : 
+                <input type="radio" name="gender" value="남성">남성 &nbsp;&nbsp;
+                <input type="radio" name="gender" value="여성">여성
+            </li>
+            <li>City : 
+                <input type="text" name="city" list="citylist">
+            </li>
+            <li>
+                <button id="btnClose" type="button">Close</button>
+                <!--창이 닫히면서 값이 넘어간다.-->
+            </li>
+        </ul>
+    </form>
+    <datalist id="citylist">
+        <option value="서울">
+        <option value="부산">
+        <option value="대전">
+        <option value="대구">
+        <option value="광주">
+        <option value="인천">
+        <option value="울산">
+    </datalist>
+</body>
+</html>

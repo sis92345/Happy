@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM object 연습</title>
+    <script>
+        var img;
+        window.onload = function(){
+            img = document.getElementsByTagName('img')[0];
+            img.src ="./image/01 NAVER Logo_Green.png";
+            img.style.width="300px";
+            img.style.height="300px";
+            img.title="Naver";
+            document.getElementsByClassName('mybtn')[0].addEventListener('click', myclick, false);
+        }
+        function myclick(){
+            img.src = 'image/google.jpg';
+            img.style.width="300px";
+            img.style.height="300px";
+            img.title="Google";
+        }
+    </script>
+</head>
+<body>
+    <div><button class="mybtn">change</button></div>
+    <hr>
+    <img>
+</body>
+</html>
