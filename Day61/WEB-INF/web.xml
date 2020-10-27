@@ -1,4 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
+
 <web-app xmlns="http://xmlns.jcp.org/xml/ns/javaee"
   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
   xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee
@@ -6,14 +7,30 @@
   version="4.0"
   metadata-complete="true">
 
-  <display-name>Welcome to Day60, 1026</display-name> <!--Manager App의 Display Name-->
+  <display-name>Welcome to 1027</display-name>
   <servlet>
-    <servlet-name>HelloWorld</servlet-name>
-    <servlet-class>HelloServlet</servlet-class> <!--실제로 실행되는 클래스-->
+  	<servlet-name>HelloWorld</servlet-name>
+  	<servlet-class>HelloServlet</servlet-class>
   </servlet>
+  <servlet>
+  	<servlet-name>Register</servlet-name>
+  	<servlet-class>RegisterServlet</servlet-class>
+  </servlet>
+  <servlet>
+  	<servlet-name>Calculator</servlet-name>
+  	<servlet-class>CalculatorServlet</servlet-class>
+  </servlet>
+  
   <servlet-mapping>
-    <servlet-name>HelloWorld</servlet-name> <!--그럼 이 이름을 위의 HelloWorld를 찾는다.>-->
-    <url-pattern>/servlets/servlet/Hello</url-pattern> <!--유저가 실제로 요청: 실제로 Hello대신 aa로 검색하면 진짜 aa로 검색해야 함-->
-    <!--www.example.com/Day60/servlets/servlet/Hello로 들어온다: 실제로 이런 폴더 없으므로 트릭, 실제 폴더를 감추기 위함-->
+  	<servlet-name>HelloWorld</servlet-name>
+  	<url-pattern>/servlets/servlet/Hello.nhn</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+  	<servlet-name>Register</servlet-name>
+  	<url-pattern>/servlets/servlet/Register</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+  	<servlet-name>Calculator</servlet-name>
+  	<url-pattern>/servlets/servlet/Calculator</url-pattern>
   </servlet-mapping>
 </web-app>
