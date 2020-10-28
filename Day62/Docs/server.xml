@@ -130,7 +130,7 @@
     <!-- You should set jvmRoute to support load-balancing via AJP ie :
     <Engine name="Catalina" defaultHost="localhost" jvmRoute="jvm1">
     -->
-    <Engine name="Catalina" defaultHost="localhost">
+    <Engine name="Catalina" defaultHost="www.example.com">
 
       <!--For clustering, please take a look at documentation at:
           /docs/cluster-howto.html  (simple how to)
@@ -150,10 +150,11 @@
                resourceName="UserDatabase"/>
       </Realm>
 
-      <Host name="localhost"  appBase="webapps"
+      <Host name="www.example.com"  appBase="webapps"
             unpackWARs="true" autoDeploy="true">
-       <Context path="/Day60" docBase="D:\git_env\Webhome\Day60" />
-       <Context path="/Day61" docBase="D:\git_env\Webhome\Day61" />
+       <Context path="/Day60" docBase="D:\An\WebHome\Day60" />
+       <Context path="/Day61" docBase="D:\An\WebHome\Day61" />
+       <Context path="/Day62" docBase="D:\An\WebHome\Day62" />
         <!-- SingleSignOn valve, share authentication between web applications
              Documentation at: /docs/config/valve.html -->
         <!--
