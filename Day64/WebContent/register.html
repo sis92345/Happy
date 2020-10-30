@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>www.example.com 회원가입</title>
+<script>
+    window.onload = function(){
+        document.getElementById('#btnReset').addEventListener('click', myretrun, false);
+    }
+    function myreturn(){
+        history.back();
+    }
+</script>
+</head>
+<body>
+    <form action="/Day64/servlets/servlet/Register1" method="GET">
+        <ul>
+            <li>Name : <input type="text" name="username"></li>
+            <li>Age : <input type="number" name="userage"></li>
+            <li>
+                <button type='submit'>가입하기</button>
+                <button type='reset' id='btnReset'>취소하기</button>
+            </li>
+        </ul>
+    </form>
+</body>
+</html>

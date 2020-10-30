@@ -1,0 +1,48 @@
+body{
+    background-color: slateblue;
+    font-family: 'Snap ITC', '문체부 훈민정음체';
+}
+h1{
+    text-align: center;
+    color: dodgerblue;
+}
+form{
+    text-align: center;
+    font-family: 'Snap ITC', '문체부 훈민정음체';
+    color: aliceblue;
+}
+button{
+    background-color: deeppink;
+    font-family: 'Snap ITC', '문체부 훈민정음체';
+    color: lawngreen;
+    text-align: center;
+}
+#btnBack{
+    font-family: 'Snap ITC', '문체부 훈민정음체';
+    color: lightcyan;
+    font-size: 2em;
+    text-align: right;
+}
+table{
+    width: 500px;
+    margin-left: auto;
+    margin-right: auto;
+    border: 1em dashed mediumaquamarine;
+}
+th{
+    background-color: crimson;
+    color: azure;
+    border: 1em solid mediumaquamarine;
+}
+td{
+    color: azure;
+    border: 0.5em solid mediumaquamarine;
+}
+tr:nth-of-type(2n){
+    background-color: darkgoldenrod;
+    border: 1em solid mediumaquamarine;
+}
+ul{
+    list-style-type: decimal;
+    text-align: left;
+}

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>www.example.com의 회원가입 페이지</title>
+     <link rel="stylesheet" href="CSS/style.css">
+</head>
+<body>
+    <h1>회원가입</h1>
+    <form class="registerform"action="/Day63/servlets/servlet/Register" method="POST"><!--여기서는 Root까지 붙어야한다. 근데 왜 여기서 Day62r가 나오지?????? 질문-->
+    <ul class="register">
+        <li>이름 : <input type="text" name="username"required></li>
+        <li>성별 : 
+            <input type="radio" name="gender" value="1" checked>남성&nbsp;&nbsp;
+            <input type="radio" name="gender" value="2">여성
+        </li>
+        <li>나이 : <input type="number" name="userage"></li>
+        <li>취미 :
+            <input type="checkbox" name="hobby" value="낚시" checked>낚시&nbsp;&nbsp;<!--서버로 넘어가는건 value attribute-->
+            <input type="checkbox" name="hobby" value="게임">게임&nbsp;&nbsp;
+            <input type="checkbox" name="hobby" value="여행">여행&nbsp;&nbsp;
+            <input type="checkbox" name="hobby" value="축구">축구&nbsp;&nbsp;
+            <input type="checkbox" name="hobby" value="코딩">코딩&nbsp;&nbsp;
+            <input type="checkbox" name="hobby" value="그림">그림
+        </li>
+        <li>거주지 :
+            <select name="city">
+                <option value="">--선택--</option>
+                <option value="서울">서울</option>
+                <option value="부산">부산</option>
+                <option value="대전">대전</option>
+                <option value="대구">대구</option>
+                <option value="인천">인천</option>
+                <option value="울산">울산</option>
+                <option value="광주">광주</option>
+            </select>
+        </li>
+        <li>
+            <button type="submit">가입하기</button> &nbsp;&nbsp;
+            <button type="reset">취소하기</button>
+        </li>
+    </ul>
+    </form>
+</body>
+</html>
