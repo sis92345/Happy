@@ -138,7 +138,7 @@
       </Realm>
 
       <Host appBase="webapps" autoDeploy="true" name="www.example.com" unpackWARs="true">
-            
+       
        
        
        
@@ -154,7 +154,8 @@
              Note: The pattern used is equivalent to using pattern="common" -->
         <Valve className="org.apache.catalina.valves.AccessLogValve" directory="logs" pattern="%h %l %u %t &quot;%r&quot; %s %b" prefix="localhost_access_log" suffix=".txt"/>
 
-      <Context docBase="Day64" path="/Day64" reloadable="true" source="org.eclipse.jst.jee.server:Day64"/></Host>
+      <Context docBase="Day64" path="/Day64" reloadable="true" source="org.eclipse.jst.jee.server:Day64"/>
+      <Context docBase="Day65" path="/Day65" reloadable="true" source="org.eclipse.jst.jee.server:Day65"/></Host>
     </Engine>
   </Service>
 </Server>
