@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>체질량지수 구하기</title>
+<link rel="stylesheet" href="./css/style.css">
+</head>
+<script src="js/bmiscript.js"></script>
+<body>
+	<h1>본인의 몸무게와 키를 정확히 입력해 주세요.</h1>
+	<form onsubmit="">
+		<ul style="list-style-type:none;line-height:200%">
+			<li>이름 : <input type="text" name="username" /></li>
+			<li>나이 : <input type="number" name="age" /></li>
+			<li>키 : <input type="text" name="height" />  cm </li>
+			<li>몸무게 : <input type="text" name="weight" /> kg </li>
+			<li><input type="submit" value="계산하기" id ='btnCalc'/></li>
+		</ul>
+	</form>
+</body>
+</html>
+<!--
+고도 비만 : 40 이상
+중등도 비만 (2단계 비만) : 35 - 39.9
+경도 비만 (1단계 비만) : 30 - 34.9
+과체중 : 25 - 29.9
+정상 : 18.5 - 22.9
+저체중 : 18.5 미만
+체중/키m^2
+-->

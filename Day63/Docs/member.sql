@@ -5,4 +5,4 @@ CREATE TABLE Member(
 	hobby			VARCHAR(60),
 	city			VARCHAR(10)
 );
-TRUNCATE TABLE Member;
+TRUNCATE TABLE Member;worldtest

@@ -42,6 +42,7 @@ public class ServletLifeCycle extends GenericServlet{
 			this.bos = new BufferedOutputStream(new FileOutputStream("C:/temp/lifecycle.txt",true));
 			String str = "called init() :" + ++this.initCount + "\n";
 			this.bos.write(str.getBytes());
+			System.out.println("ccc");
 			this.bos.flush(); //실제 파일보냄
 		} catch (IOException e) {
 			e.printStackTrace();
@@ -52,14 +53,17 @@ public class ServletLifeCycle extends GenericServlet{
 	public void service(ServletRequest arg0, ServletResponse arg1) throws ServletException, IOException {
 		String str = "called service() :" + ++this.serviceCount + "\n";
 		this.bos.write(str.getBytes()); //buffer에 writer
+		System.out.println("aaaa");
+		System.out.println("aaaa");
 		this.bos.flush();//buffer를 사용하면 무조건 flush
-		
 	}
 	@Override
 	public void destroy() {
 		String str = "called destory() :" + ++this.destoryCount + "\n";
 		try {
 			this.bos.write(str.getBytes());
+			System.out.println("bbb");
+			System.out.println("bbb");
 			this.bos.flush();
 			this.bos.close();
 		} catch (IOException e) {
@@ -67,5 +71,5 @@ public class ServletLifeCycle extends GenericServlet{
 			e.printStackTrace();
 		}
 	}
-    
 }
+

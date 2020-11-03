@@ -1,6 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-<!--scriptletDemo.jsp?first=5%second=9&op=x  -->
+<!--scriptletDemo.jsp?first=5&second=9&op=x  -->
 <%
 	int first = Integer.parseInt(request.getParameter("first"));
 	int second = Integer.parseInt(request.getParameter("second"));

@@ -1,0 +1,22 @@
+body{
+    background-color: darkslategray;
+    font-family: '문체부 훈민정음체','Comic Sans MS';
+}
+h1{
+    text-align: center;
+}
+table{
+    border: 3px dashed slateblue;
+    margin-left: auto;
+    margin-right: auto;
+    background-color: aquamarine;
+}
+tr:nth-of-type(2n){
+    background-color: sandybrown;
+}
+th:nth-of-type(4n){
+    background-color: aliceblue;
+}
+p{
+    text-align: center;
+}
