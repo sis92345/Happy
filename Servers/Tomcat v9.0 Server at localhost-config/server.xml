@@ -157,7 +157,9 @@
       <Context docBase="Day64" path="/Day64" reloadable="true" source="org.eclipse.jst.jee.server:Day64"/>
       <Context docBase="Day65" path="/Day65" reloadable="true" source="org.eclipse.jst.jee.server:Day65"/>
       <Context docBase="Day66" path="/Day66" reloadable="true" source="org.eclipse.jst.jee.server:Day66"/>
-      </Host>
+      <Context docBase="Day67" path="/Day67" reloadable="true" source="org.eclipse.jst.jee.server:Day67"/>
+      <Context docBase="Day68" path="/Day68" reloadable="true" source="org.eclipse.jst.jee.server:Day68"/>
+      <Context docBase="Day69" path="/Day69" reloadable="true" source="org.eclipse.jst.jee.server:Day69"/></Host>
     </Engine>
   </Service>
 </Server>

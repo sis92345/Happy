@@ -1,0 +1,5 @@
+<%
+	String msg = "Hello, world";
+	String backgroundColor = "#FFFF00"; 
+	String foregroundColor = "#0000FF"; 
+%>
