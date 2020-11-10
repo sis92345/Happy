@@ -137,12 +137,13 @@
         <Realm className="org.apache.catalina.realm.UserDatabaseRealm" resourceName="UserDatabase"/>
       </Realm>
 
-      <Host appBase="webapps" autoDeploy="true" name="www.example.com" unpackWARs="true">
-       
-       
-       
-       
-       
+      <Host appBase="D:\An\WebContent" autoDeploy="true" name="www.example.com" unpackWARs="true">
+      
+       <!-- <Context path="/Day60" docBase="D:\An\WebHome\Day60" />
+       <Context path="/Day61" docBase="D:\An\WebHome\Day61" />
+       <Context path="/Day62" docBase="D:\An\WebHome\Day62" />
+       <Context path="/Day63" docBase="D:\An\WebHome\Day63" /> -->
+       <!--Day64: WAR-->
         <!-- SingleSignOn valve, share authentication between web applications
              Documentation at: /docs/config/valve.html -->
         <!--
@@ -159,7 +160,8 @@
       <Context docBase="Day66" path="/Day66" reloadable="true" source="org.eclipse.jst.jee.server:Day66"/>
       <Context docBase="Day67" path="/Day67" reloadable="true" source="org.eclipse.jst.jee.server:Day67"/>
       <Context docBase="Day68" path="/Day68" reloadable="true" source="org.eclipse.jst.jee.server:Day68"/>
-      <Context docBase="Day69" path="/Day69" reloadable="true" source="org.eclipse.jst.jee.server:Day69"/></Host>
+      <Context docBase="Day69" path="/Day69" reloadable="true" source="org.eclipse.jst.jee.server:Day69"/>
+      <Context docBase="Day70" path="/Day70" reloadable="true" source="org.eclipse.jst.jee.server:Day70"/></Host>
     </Engine>
   </Service>
 </Server>

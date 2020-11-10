@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Local Storage</title>
+<link rel="stylesheet" href="css/style.css">
+<script>
+    window.onload = function(){
+        document.getElementById('btnAdd').addEventListener('click', cartAdd, false);
+        document.getElementById('btnRemove').addEventListener('click', cartRemove, false);
+    }
+    function cartAdd(){
+        var str = localStorage.getItem("mycart");
+        if(str){
+            //이미 카트가 만들어져있었다면
+            var obj = JSON.parse(str);
+            //담기만하기
+            obj.items.push(document.forms[0].item.value);
+            localStorage.setItem("mycart",JSON.stringify(obj))
+            
+        }else{
+            //지금 방금 카트를 만들었다면
+            var obj1 = {
+                items : []
+            }
+            obj1.items.push(document.forms[0].item.value);
+            localStorage.setItem("mycart",JSON.stringify(obj1))
+        }
+        display();
+    }
+    function display(){
+        var str = localStorage.getItem("mycart");
+        var result = "<ol>";
+        var array = JSON.parse(str).items;
+        for(var i=0;i<array.length;i++){
+            result += "<li>" + array[i] + "</li>";
+        }
+        result += "</ol>";
+        document.getElementById('result').innerHTML = result;
+    }
+    function cartRemove(){
+        var str = localStorage.getItem("mycart");
+        var obj = JSON.parse(str);
+        var item = document.forms[0].item.value; //나훈아
+        var flag = false;
+        console.log(item);
+        //살짝 이상함 다 삭제됨: 내가 임의로 수정
+        for(var i=0;i<obj.items.length;i++){
+            if(obj.items[i] == item){
+                flag = true;
+            }
+        }
+        if(flag){
+            obj.items.splice(obj.items.indexOf(item), 1); //array.splice(index, howmany, item1, ....., itemX)
+            localStorage.setItem("mycart",JSON.stringify(obj));
+            display();
+        }else{
+            alert("해당하는 값이 없습니다.");
+        }
+        
+    }
+</script>
+</head>
+<body>
+    <h1>구매할 CD를 선택해 주세요.</h1>
+    <form method="POST">
+        <select name="item" id='item'>
+            <option>--선택--</option>
+            <option value="소녀시대">소녀시대</option>
+            <option value="나훈아">나훈아</option>
+            <option value="아이유">아이유</option>
+            <option value="BTS">BTS</option>
+            <option value="박효신">박효신</option>
+            <option value="김희재">김희재</option>
+        </select>
+        <!--Hidden-->
+        <input type="button" value = "카트에 담기" id='btnAdd'>
+        <input type="button" value = "카트에서 빼기" id='btnRemove'>
+    </form>
+    <div id='result'>
+
+    </div>
+</body>
+</html>

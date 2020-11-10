@@ -1,4 +1,4 @@
-<style>
+<%-- <style>
     ul{
         list-style-type: none; 
         background-color: <%=backgroundColor%>; 
@@ -19,3 +19,4 @@
     <li>Nate</li>
     <li><%=msg%></li>
 </ul>
+ --%>
