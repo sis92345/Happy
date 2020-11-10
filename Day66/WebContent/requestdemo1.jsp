@@ -6,7 +6,7 @@
 	POST방식은 setContentType을 넣어야 한다: GET은 자동이지만 POST는 자동 아님 
 	request.setCharacterEncoding("utf-8");를 이용한다.
 	*/
-	request.setCharacterEncoding("utf-8");
+	/* request.setCharacterEncoding("utf-8"); */
 	Enumeration<String> names =  request.getParameterNames();
 %>
 <!DOCTYPE html>

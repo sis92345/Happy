@@ -21,8 +21,8 @@
 		<li>요청 메소드 : <%=request.getMethod() %></li>
 		<li>요청 URI : <%=request.getRequestURI() %></li>
 		<li>요청 URL : <%=request.getRequestURL() %></li>
-		<li>요청 ServerName :<%=request.getServerName() %> </li>
-		<li>요청 ServerPort : <%=request.getServerPort() %></li>
+		<li>요청 ServerName :<%=request.getLocalName() %> </li>
+		<li>요청 ServerPort : <%=request.getLocalPort() %></li>
 		<li>요청 ContextPath : <%=request.getContextPath() %></li>
 		<li>Client IP : <%=request.getRemoteAddr() %></li>
 		<li>Client Machine : <%=request.getRemoteHost() %></li>

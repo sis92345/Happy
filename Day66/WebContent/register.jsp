@@ -11,7 +11,7 @@
 <body>
 	<!-- servlet, Directive같은 서버사이드 언어가 있으므로 HTML이 아니라 JSP 파일을 사용한다. -->
     <h1>회원가입</h1>
-    <form class="registerform"action="<%= request.getContextPath() %>/requestdemo1.jsp" method="POST">
+    <form class="registerform"action="<%= request.getContextPath() %>/requestdemo1.jsp" method="GET">
     <ul class="register">
         <li>이름 : <input type="text" name="username"required></li>
         <li>성별 : 

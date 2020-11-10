@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script src="js/jquery-3.5.1.js"></script>
+<script>
+	$(document).ready(function(){
+		var strObj = localStorage.getItem("mycart");
+		var obj = JSON.parse(strObj);
+		var str = "";
+		for(var i=0;i<obj.items.length;i++){
+			var item = obj.items[i];
+			str += item.name + " : " + item.value + "<br />";
+		}
+		$('#result').html(str);
+		//document.getElementById('result').innerHTML = str;
+	});
+</script>
+</head>
+<body>
+&nbsp;&nbsp;&nbsp;&nbsp;localStorage 이름 : 값<br />
+&nbsp;&nbsp;&nbsp;&nbsp;==================<br />
+    <div id="result"></div>
+    <a href="InputLocalStorage.html">LocalStorage 입력 화면으로</a>
+</body>
+</html>
