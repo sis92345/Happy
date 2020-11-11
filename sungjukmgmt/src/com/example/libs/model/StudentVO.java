@@ -11,10 +11,23 @@ public class StudentVO { //Java Bean
 	private double avg;
 	private String grade;
 	
+	//Constructor
+	public StudentVO() {
+		
+	}
+	public StudentVO(String hakbun, String name, int kor, int eng, int mat) {
+		this.hakbun = hakbun;
+		this.name = name;
+		this.kor = kor;
+		this.eng = eng;
+		this.mat = mat;
+	}
+	
 	//Getter Setter
 	public String getHakbun() {
 		return hakbun;
 	}
+	
 	public void setHakbun(String hakbun) {
 		this.hakbun = hakbun;
 	}

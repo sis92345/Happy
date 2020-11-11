@@ -1,5 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8" buffer="none"%>
+    pageEncoding="UTF-8" buffer="4kb"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -18,6 +18,7 @@
 	//out.clear(); //이걸 제거하고 해보자
 	out.println("이 글자는 유저에게");
 	out.newLine();
+	out.clearBuffer();
 	out.println("전달될 겁니다"); //buffer로 println
 	out.flush();
 %>

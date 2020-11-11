@@ -155,15 +155,7 @@
              Note: The pattern used is equivalent to using pattern="common" -->
         <Valve className="org.apache.catalina.valves.AccessLogValve" directory="logs" pattern="%h %l %u %t &quot;%r&quot; %s %b" prefix="localhost_access_log" suffix=".txt"/>
 
-      <Context docBase="Day64" path="/Day64" reloadable="true" source="org.eclipse.jst.jee.server:Day64"/>
-      <Context docBase="Day65" path="/Day65" reloadable="true" source="org.eclipse.jst.jee.server:Day65"/>
-      <Context docBase="Day66" path="/Day66" reloadable="true" source="org.eclipse.jst.jee.server:Day66"/>
-      <Context docBase="Day67" path="/Day67" reloadable="true" source="org.eclipse.jst.jee.server:Day67"/>
-      <Context docBase="Day68" path="/Day68" reloadable="true" source="org.eclipse.jst.jee.server:Day68"/>
-      <Context docBase="Day69" path="/Day69" reloadable="true" source="org.eclipse.jst.jee.server:Day69"/>
-      <Context docBase="Day70" path="/Day70" reloadable="true" source="org.eclipse.jst.jee.server:Day70"/>
-      <Context docBase="Day71" path="/Day71" reloadable="true" source="org.eclipse.jst.jee.server:Day71"/>
-      <Context docBase="sungjukmgmt" path="/sungjukmgmt" reloadable="true" source="org.eclipse.jst.jee.server:sungjukmgmt"/></Host>
+      <Context docBase="sungjukmgmt" path="/sungjukmgmt" reloadable="true" source="org.eclipse.jst.jee.server:sungjukmgmt"/><Context docBase="Day66" path="/Day65" reloadable="true" source="org.eclipse.jst.jee.server:Day66"/></Host>
     </Engine>
   </Service>
 </Server>

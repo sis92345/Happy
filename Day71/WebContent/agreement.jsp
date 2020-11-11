@@ -1,13 +1,13 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-<%@ page import="java.util.Enumeration" %>
+<%@ page import="java.util.Enumeration, java.util.Collection,java.util.List" %>
 <%
 	request.setCharacterEncoding("utf-8");
 	String id = request.getParameter("id");
 	String password = request.getParameter("password");
 	String name = request.getParameter("name");
 	Enumeration<String> e = request.getHeaderNames();
-	
+	List<String> r = (List<String>)response.getHeaderNames();
 	
 %>
 <!DOCTYPE html>
@@ -17,11 +17,14 @@
 <title>Aggrement</title>
 </head>
 <body>
-	<%while(e.hasMoreElements()){ 
+	<% int i = 0;
+	while(e.hasMoreElements()){ 
 		Enumeration<String> e1 = request.getHeaders(e.nextElement());
 	%>
 		<p><%=e.nextElement() %> : <%=e1.nextElement() %></p>
-	<%} %>
+	<%
+		i++;
+	} %>
 	<h3>약관</h3>
 	<form action="subscribe.jsp" method="POST">
 	<input type="hidden" name="id" value="<%=id %>">
