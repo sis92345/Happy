@@ -13,7 +13,7 @@ public class SungjukMgmtDao {
 		String sql = "{ call SP_SELECT_ALL(?) }";
 		CallableStatement cstmt = conn.prepareCall(sql); //4
 		cstmt.registerOutParameter(1, oracle.jdbc.OracleTypes.CURSOR); // 5, sqlType: oracle에서만 사용하는 타입, oracle을 import, jdbc의 cursor가 아님
-		cstmt.execute(); //매우 주의하자: 그냥 execute
+		cstmt.executeQuery(); //매우 주의하자: 그냥 execute
 		ResultSet rs = (ResultSet)cstmt.getObject(1); //6, 자바에서는 커서가 없으므로 Object로 바꾼다. 
 		ArrayList<StudentVO> list = new ArrayList<StudentVO>();
 		//커서는 이제 rs의 제일 첫번째
