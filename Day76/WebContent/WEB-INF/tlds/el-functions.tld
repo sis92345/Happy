@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<taglib xmlns="http://java.sun.com/xml/ns/j2ee"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://java.sun.com/xml/ns/j2ee http://java.sun.com/xml/ns/j2ee/web-jsptaglibrary_2_0.xsd"
+	version="2.0">
+
+		<tlib-version>1.0</tlib-version>
+		<short-name>mytag</short-name>
+		<function>
+			<name>mymethod</name> <!-- eldemo:mymethod(TODAY)의 mymethod -->
+			<function-class>com.example.libs.model.ElDemo</function-class> 
+			<function-signature>java.lang.String getFormat(java.util.Date)</function-signature><!-- 메소드의 시그네쳐를 적는다: 해당 메소드를 실행 -->
+			<!-- 
+				컴파일러가 메소드를 구분하는 기준(Signature): 메소드 이름, 파라미터, 리턴타입(+ 오버라이딩)
+				영향 안주는 거: 파라미터의 이름, 리턴 타입(오버 라이딩에 영향)
+			-->
+		</function>
+		
+		<function>
+			<name>myemp</name> <!-- eldemo:mymethod(TODAY)의 mymethod -->
+			<function-class>com.example.libs.model.GetEmployee</function-class> 
+			<function-signature>java.lang.String getEmp(java.lang.String)</function-signature><!-- 메소드의 시그네쳐를 적는다: 해당 메소드를 실행 -->
+			<!-- 
+				컴파일러가 메소드를 구분하는 기준(Signature): 메소드 이름, 파라미터, 리턴타입(+ 오버라이딩)
+				영향 안주는 거: 파라미터의 이름, 리턴 타입(오버 라이딩에 영향)
+			-->
+		</function>
+	</taglib>
