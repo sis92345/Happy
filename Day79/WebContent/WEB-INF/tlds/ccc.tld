@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<taglib xmlns="http://java.sun.com/xml/ns/j2ee"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://java.sun.com/xml/ns/j2ee
+http://java.sun.com/xml/ns/j2ee/web-jsptaglibrary_2_0.xsd"
+	version="2.0">
+	<description>JSP Custom Tag 1.2 연습 태그</description>
+	<tlib-version>1.1</tlib-version>
+	<!-- 필수 -->
+	<short-name>aaa</short-name> <!-- 접두사:tagname 중 접두사 -->
+	<!-- 필수 -->
+	<tag>
+		<description>빨간글씨로 HelloWorld 출력하기</description> 
+		<name>bbb</name> <!-- 접두사:tagname 중 tagname -->
+		<!-- 필수 -->
+		<tag-class>com.example.libs.model.HelloWorld</tag-class> <!-- 해당 Custom tag가 참조할 위치 -->
+		<!-- 필수 -->
+		<body-content>empty</body-content><!-- <Start tag> Content(==Body) </End tag> -->
+		<!-- 필수 -->
+		<!--  body 가 존재하지 않으면 empty, 있으면 JSP 로 입력 -->
+	</tag>
+</taglib>
