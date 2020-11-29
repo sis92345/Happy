@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Ajax Example</title>
+<script>
+    //페이지가 로딩된 후
+    window.onload = function(){
+        document.querySelector('#txtNow').addEventListener('click',function(){
+            //XHR 프로그래밍 순서
+          
+            //1. XHR 객체 구하기
+            var xhr = new XMLHttpRequest();
+            //결과를 받아온다.          
+            xhr.onreadystatechange = function(){
+                if(xhr.readyState == 4 && xhr.status == 200) { //4: 갖다가 옴, 200: 서버 정상처리
+                    //데이터를 보내줌
+                   var result = xhr.responseText; //date.jsp에서 보낸 오늘 날짜: 화 11월 24 11:34:56 KST 2020
+                   document.querySelector('#txtNow').value = result; //text박스이므로.....
+                }
+            }
+            //2. OPEN
+            xhr.open('get', 'date.jsp', true)  //true: 비동기(기본값), false: 동기
+            //3 SEND: GET일 경우 NULL
+            xhr.send(null);
+        }, false); //Bubble up: false(기본값), 아래에서 위로 이벤트 전달
+    }
+</script>
+</head>
+<body>
+    Now : <input type="text" id="txtNow" size='30'/>
+</body>
+</html>

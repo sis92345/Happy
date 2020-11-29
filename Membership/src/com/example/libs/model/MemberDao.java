@@ -124,6 +124,25 @@ public class MemberDao {
 		DBClose.close(conn, cstmt);
 		return row;
 	}
+	public static boolean idCheck(String userid) throws SQLException{
+		Connection conn = DBConnection.getConnection();  //2,3 
+		//아이디를 체크: 이미 있는 아이디면 false를, 사용할 수 있으면 true를 return
+		String sql = "{ call sp_member_idcheck(?,?)}";
+		CallableStatement cstmt = conn.prepareCall(sql);
+		cstmt.setString(1, userid);
+		cstmt.registerOutParameter(2, OracleTypes.CURSOR);
+		cstmt.execute(); //5
+		ResultSet rs = (ResultSet)cstmt.getObject(2);
+		boolean check = false;
+		if(rs.next()) {
+			//rs가 된다면 == 값이 있다면 == 내가 선택한 아이디가 이미 있다면
+			check = false;
+		}else {
+			check = true;
+		}
+		DBClose.close(conn, cstmt, rs);
+		return check;
+	}
 }
 
 

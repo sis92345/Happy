@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>City List</title>
+<link rel="stylesheet" href="css/bootstrap.css">
+<script src="js/jquery-3.5.1.js"></script>
+<script>
+    let xhr = null;
+    $('document').ready(function(){
+        xhr = new XMLHttpRequest();
+        xhr.onreadystatechange = callback;
+        xhr.open('GET', 'getCity.jsp', true);
+        xhr.send(null);
+        $('#selCity').on('change',myChange);
+    });
+    function myChange(){
+
+    }
+    function callback(){
+        if(xhr.readyState == 4 && xhr.status == 200){
+            myparsor(xhr.responseText); //매우 주의하자: Server가 보낸 Json은 일반 Text
+        }
+    }
+    function myparsor(serverdata){
+        //강사님 마지막 콤마 자르기: 여기서 자른다.
+        //let idx = serverdata.lastIndexOf(",");
+        //ler str = serverdata.subString(0, idx) + "]}";
+        //str = str.trim();
+        let obj = JSON.parse(serverdata.trim()); //문자열이 객체로!
+        let str = "";
+        if(obj.code == "success"){
+            let array = obj.data;
+            for(let i=0;i<array.length;i++){
+                let city = array[i];
+                str += "<tr>";
+                str +=  "<td>" + city.id + "</td>" + "<td>" + city.name + "</td>" + "<td>" + city.countrycode + "</td>" + "<td>" + city.district + "</td>" + "<td>" +  city.population.toLocaleString() + "</td>";
+                str += "</tr>";
+
+            }
+            $('tbody').html(str);
+        }
+    }
+</script>
+<style>
+	body{
+		background-color: #dbf6e9;
+	}
+	table{
+		background-color: #dbf6e9; 
+		color: black;
+	}
+	table, th, td{
+		text-align: center;
+		background-color: white;
+        border: 1px black solid;
+	}
+	tr:hover{
+		font-size: 1.2em;
+		font-weight: bold; 
+	}	
+</style>
+</head>
+<body>
+    <h1 class="text-center">국가코드별 도시 리스트</h1>
+    <select id="selCity">
+        <option value="">--도시 선택--</option>
+    </select>
+    <div class="container">
+        <div class="row">
+            <table class="table table-hover">
+                <thead class="text-center">
+                    <tr class="info">
+                        <th>번호</th>
+                        <th>이름</th>
+                        <th>코드</th>
+                        <th>지역</th>
+                        <th>인구</th>
+                    </tr>
+                </thead>
+                <tbody>
+                </tbody>
+            </table>
+        </div>
+    </div>
+    
+</body>
+</html>

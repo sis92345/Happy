@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>etnews Archive</title>
+<link rel="stylesheet" href="css/bootstrap.css">
+<script src="js/jquery-3.5.1.js"></script>
+<style>
+	body{
+		background: linear-gradient(45deg, #B2FEFA, #0ED2F7);
+		background-repeat: no-repeat;
+		height: 1500px;
+		background-size: cover;
+
+	}
+	table{
+		background-color: #dbf6e9; 
+		color: black;
+	}
+	table, th, td{
+		text-align: center;
+		background-color: white;
+	}
+	tr:hover{
+		font-size: 1.2em;
+		font-weight: bold; 
+	}
+	tr:nth-child(2n){
+    	color: fuchsia;
+	}
+	a:visited{
+		color: red;
+	}
+</style>
+<script>
+    $.ajax({
+        method: 'GET',
+        url: 'proxy_etnews.jsp',
+        dataType: 'xml',
+        success : function(xml){
+            myparsor(xml);
+        }
+    });
+    function myparsor(xml){
+        let str = "";
+        let cnt = 1;
+        let array = xml.getElementsByTagName('item');
+        for(let i=0;i<array.length;i++){
+            let item = array[i];
+            let title = item.getElementsByTagName('title')[0].firstChild.nodeValue.trim();
+            let link1 = item.getElementsByTagName('link')[0].firstChild.nodeValue.trim();
+            let pubDate = item.getElementsByTagName('pubDate')[0].firstChild.nodeValue.trim();
+            pubDate = new Date(pubDate.trim());
+            str +="<tr>";
+            str +="<td>" + cnt++ + "</td><td>" + "<a href='" + link1 + "' target='_blank'>" + title+ "</a></td><td>" + pubDate.toLocaleDateString() + "</td>";
+            str +="</tr>";
+        }
+        $('tbody').html(str);
+    }
+</script>
+</head>
+<body>
+    <div class="container">
+        <div class="row">
+            <h1 class="text-center">전자신문 오늘의 뉴스</h1>
+            <table class="table table-hover">
+                <thead>
+                    <tr>
+                        <th style="width:5%">No.</th>
+                        <th style="width:80%">기사제목</th>
+                        <th style="width:15%">날짜</th>
+                    </tr>
+                </thead>
+                <tbody></tbody>
+            </table>
+        </div>
+    </div>
+</body>
+</html>

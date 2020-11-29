@@ -16,23 +16,7 @@
 <meta charset="UTF-8">
 <title>Welcome To 쌍용고등학교</title>
 <link rel="stylesheet" href="css/bootstrap.css">
-<style>
-	body{
-		background-color: #dbf6e9;
-	}
-	#tableInput1, #tableInput2{
-		background-color: #dbf6e9; 
-		color: black;
-	}
-	#resultTable, th, td{
-		text-align: center;
-		background-color: white;
-	}
-	tr:hover{
-		font-size: 1.2em;
-		font-weight: bold; 
-	}	
-</style>
+ㄲ
 </head>
 <body>
 	<h1 class="text-center">쌍용고등학교 성적관리프로그램</h1>

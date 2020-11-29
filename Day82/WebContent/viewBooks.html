@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8" />
+<title>책정보 보기</title>
+<script src="js/jquery-3.5.1.js"></script>
+<script>
+$('document').ready(function(){
+    $('#btn').on('click', function(){
+        //1
+        let xhr = new XMLHttpRequest();
+        //2
+        xhr.onreadystatechange = function(){
+            //4
+            if(xhr.readyState == 4 && xhr.status == 200){
+                //xml이므로 responseXML을 사용
+                let docs = xhr.responseXML;
+                //alert(docs.firstChild.nodeName);
+                //let books = docs.firstChild;
+                //alert(books.childNodes.length); //엔터도 books의 자식으로 간주, 그래서 3개가 아닌 7게
+                //alert(books.childNodes[0].length)
+                let books = docs.getElementsByTagName('book');
+                
+                let str = "";
+                for(let i=0;i<books.length;i++){
+                    let book = books.item(i);     //books.item(i): book //
+                    let title = book.getElementsByTagName('title').item(0); // titel tag
+                    let author = book.getElementsByTagName('author').item(0);
+                    str = title.firstChild.nodeValue + "(" + author.firstChild.nodeValue + ")\n";
+                    alert(str);
+                } 
+            }
+        }
+        xhr.open('GET','books.xml',true);
+        //3
+        xhr.send(null);
+    });
+});
+</script>
+</head>
+<body>
+    <button id="btn">책 정보를 alert로 출력</button>
+</body>
+</html>

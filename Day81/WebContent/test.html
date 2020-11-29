@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<link rel="stylesheet" href="css/style.css">
+<script src="js/jquery-3.5.1.js"></script>
+<script>
+	var xhr = null;
+	$('document').ready(function(){
+		//1. 객체 생성
+		xhr = new XMLHttpRequest();
+		$('#btnDeptno').on('click', function(){
+			//2OPEN
+			xhr.onreadystatechange = envChange;
+			deptno = $('#setDeptno').val();
+			xhr.open('GET','test.jsp?deptno=' + deptno,true);
+			xhr.setRequestHeader("Content-Type","application/x-www-form-urlencoded;charset=utf-8");
+			//3SEND
+			xhr.send(null);
+		});
+	});
+	function envChange(){
+		if(xhr.readyState == 4 && xhr.status == 200){
+			$('#result').html(xhr.responseText.trim());
+		}
+	}
+</script>
+</head>
+<body>
+	<div>
+		부서번호:<input type="text" id="setDeptno">
+		<input type="button" value="부서 인원 찾기" id="btnDeptno">
+		<span id='result'></span>
+	</div>
+</body>
+</html>

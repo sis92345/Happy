@@ -35,4 +35,13 @@ public class SelectService {
 		}
 		return member;
 	}
+	public boolean idCheck(String userid) {
+		boolean check = false;
+		try {
+			check = MemberDao.idCheck(userid);
+		}catch(SQLException e) {
+			System.out.println(e);
+		}
+		return check;
+	}
 }

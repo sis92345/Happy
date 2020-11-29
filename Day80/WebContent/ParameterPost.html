@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>AJAX:HTML GET 방식 요청 방식</title>
+<script>
+    window.onload = function(){
+        document.querySelector('#phone').addEventListener('blur',myblur,false); //blur: 폰 번호 텍스트 박스 포커스를 잃을때
+    }
+   xhr = new XMLHttpRequest();
+    function myblur(){
+        //1. 객체 생성
+        xhr = new XMLHttpRequest();
+        //4. 받아온 결과 처리
+        xhr.onreadystatechange = myResult;
+        //2.OPEN
+        let name = document.querySelector('#name').value;
+        let age = document.querySelector('#age').value;
+        let phone = document.querySelector('#phone').value;
+        let param = 'name=' + name + '&age=' + age + '&phone=' + phone;
+        xhr.open('post','/Day80/servlets/servlet/ParameterPost', true);
+        //POST 방식은 send 이전에 Request Header를 잡아야한다.
+        xhr.setRequestHeader('Content-Type','application/x-www-form-urlencoded;charset=utf-8');
+        //3.SEND: GET은 NULL
+        xhr.send(param);
+    }
+    function myResult(){
+        if(xhr.readyState == 4 && xhr.status == 200){
+            document.querySelector('#resultDisplay').innerHTML = xhr.responseText; //태그 사이에 값을 넣는다.
+        }
+    }
+</script>
+</head>
+<body>
+    <form>
+        <h3>POST방식으로 요청파라미터 보내기</h3>
+        이름: <input id="name" type="text" /><br/>
+        나이: <input id="age" type="text" /><br/>
+        휴대폰: <input id="phone" type="text" /><br/>
+        <input id="postSend" type="button" value="POST방식으로 요청파라미터 보내기" /><br/>
+        </form>
+        <h3>응답결과</h3>
+        <div id='resultDisplay'></div>
+</body>
+</html>

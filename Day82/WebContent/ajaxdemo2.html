@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>JSON</title>
+    <script>
+        var xhrObj;
+        window.addEventListener("load", setup, false);
+        function setup() {
+            xhrObj = new XMLHttpRequest();
+            xhrObj.open("get", "member_json.jsp", true);
+            xhrObj.onreadystatechange = callback;
+            xhrObj.send(null);
+        }
+        function callback() {
+            if (xhrObj.readyState == 4 && xhrObj.status == 200) {
+                //var jsonobj = eval("(" + xhrObj.responseText + ")"); 예전꺼
+                var jsonobj = JSON.parse(xhrObj.responseText); // parse() String -> Object, Json은 responseText로 받는다.
+                if (jsonobj.code == "success") {
+                    var m = jsonobj.data.member;
+                    alert(m.irum + " [ " + m.id + " ] " + m.juminnum);
+                }
+            }
+        }
+    </script>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+</body>
+
+</html>

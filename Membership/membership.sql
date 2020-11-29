@@ -64,8 +64,8 @@ CREATE OR REPLACE PROCEDURE sp_member_insert
 )
 IS
 BEGIN
-    INSERT INTO Member
-    VALUES(v_userid, v_passwd, v_name, v_email, v_gender, v_city, v_age);
+    INSERT INTO Member(userid, passwd, name, email, gender, city, age, flag)
+    VALUES(v_userid, v_passwd, v_name, v_email, v_gender, v_city, v_age, 1);
     COMMIT;
 END;
 
@@ -86,7 +86,7 @@ CREATE OR REPLACE PROCEDURE sp_member_delete
 (
     v_userid    IN  member.userid%TYPE
 )
-AS
+IS
 BEGIN
     DELETE FROM Member
     WHERE userid = v_userid;
@@ -99,7 +99,7 @@ CREATE OR REPLACE PROCEDURE sp_member_update
     v_city      IN  member.city%TYPE,
     v_age       IN  member.age%TYPE
 )
-IS
+AS
 BEGIN
     UPDATE Member
     SET email = v_email, city = v_city, age = v_age
@@ -118,8 +118,24 @@ BEGIN
     FROM member;
 END;
 
+CREATE OR REPLACE PROCEDURE sp_member_idcheck
+(
+    v_userid    IN  member.userid%TYPE,
+    member_record   OUT SYS_REFCURSOR
+)
+IS
+BEGIN
+    --사용 가능한 아이디라면 SELECT의 결과가 NULL이어야한다.
+    OPEN member_record FOR
+    SELECT userid
+    FROM Member
+    WHERE userid = v_userid;
+END;
+
+
 ALTER TABLE Member
 ADD flag NUMBER(1)   DEFAULT 1 NOT NULL;
 
 INSERT INTO Member(userid, passwd, name, email, gender, city, age, flag)
 VALUES('admin','admin','관리자','admin@example.com','2', NULL, NULL, 0);
+

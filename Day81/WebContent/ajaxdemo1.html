@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<link rel="stylesheet" href="css/style.css">
+<script src="js/jquery-3.5.1.js"></script>
+<script>
+    var xmlObj;
+    $(document).ready(function(){
+        $('#btn').click(function(){
+        xmlObj = new XMLHttpRequest();
+        xmlObj.open("GET", "sungjuk_utf8.dat");
+        xmlObj.onreadystatechange = callback;
+        xmlObj.send(null);
+        });
+    });
+    function displayHeader(){
+        var str = "<h2>성적 데이터(TEXT)</h2>";
+        str += "<table><thead><tr>";
+        str += "<th>학번</th><th>이름</th><th>국어</th><th>영어</th><th>수학</th><th>전산</th>";
+        str += "<th>총점</th><th>평균</th><th>학점</th></tr></thead>";
+        str += "<tbody></tbody>";
+        str += "</table>";
+        return str;
+    }
+    function callback(){
+        if(xmlObj.readyState ==4 && xmlObj.status == 200){
+            $('#rcvMsg').html(displayHeader());
+            myparsor(xmlObj.responseText)
+        }
+    }
+    function myparsor(data){
+        var str = "";
+        var array = data.split("\n"); //방이 12개
+        for(var i = 0 ; i < array.length ; i++){
+            str += "<tr>";
+            var array1 = array[i].split("     "); //5칸으로 구분: txt 5칸으로 나눔
+            for(var j = 0 ; j < array1.length ; j++){
+                str += "<td>" + array1[j] + "</td>";
+            }
+            var sum = parseInt(array1[2]) + parseInt(array1[3]) + parseInt(array1[4]) + parseInt(array1[5]);
+            var avg = sum / 4.;
+            avg = avg.toFixed(2);
+            var grade = (avg <= 100 && avg >= 90) ? 'A' :
+                        (avg < 90 && avg >= 80) ? 'B' :
+                            (avg < 80 && avg >= 70) ? 'C' :
+                                 (avg < 70 && avg >= 60) ? 'D' : 'F';
+            str += "<td>" + sum + "</td><td>" + avg + "</td><td>" + grade + "</td>";
+            str += "</tr>";
+        }
+        $('tbody').html(str);
+    }
+</script>
+</head>
+<body>
+    <input type="button" id="btn" value="성적데이터수신(TEXT)">
+    <div id="rcvMsg"></div>
+    <!--서버에서 가져올 데이터: 
+        일반 txt: 각 값의 구별이 항상 같아야한다. 즉 10칸으로 구분한다고 했는데 11칸 입력하면 데이터가 틀어진다.
+         csv(Character Seperate Value),
+         - csv(Comma Seperate Value)
+         - tsv(Tab Seperate Value)
+         xml, json-->
+</body>
+</html>
